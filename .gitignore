@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+## 무시
+**/.vs/
+**/Debug/
+**/.vscode/
+

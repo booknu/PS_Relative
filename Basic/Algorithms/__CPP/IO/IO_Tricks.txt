@@ -1,0 +1,15 @@
+1. ios::sync_with_stdio(false);
+	: iostream과 C의 stdio를 sync(동기화) 해주는 역할.
+	  두 개의 버퍼를 모두 사용하기 때문에 입출력 시간이 느려짐.
+	  이걸 끊으면 c++만의 독립적인 버퍼를 생성하게 되고, c의 버퍼와는 병행 사용 불가능
+	  
+2. cin.tie(0);
+	: default는 cin과 cout이 tie가 되어 있음.
+	  예를 들어 cout << "HI"; cin >> var; 이 있으면, 우선 "HI"를 출력하고, var을 입력받음
+	  
+	  하지만 untie의 경우에는 cout으로부터 cin을 untie 하기 때문에 먼저 입력부터 하게 됨.
+	  따라서 이 경우에는 "HI"는 보이지 않고 var만 입력되게 됨.
+	  "HI"가 출력되는 경우는 버퍼가 가득차거나, 출력 명령 fflush(stdout) 명령이 있을 때만 flushed 되고 출력이 되기 때문.
+	  
+	  따라서 cin 입력 전 cout 출력이 필요한 경우 fflush(stdout) 명령을 줘야 함.
+	  --> Interactive 문제에서 이런 부분 주의!

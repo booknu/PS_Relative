@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\다차원 배열">
+      <UniqueIdentifier>{175c31a6-e147-4278-9527-718b9914dd4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\객체">
+      <UniqueIdentifier>{6469e992-f827-40b5-b317-b3d798226e3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\포인터">
+      <UniqueIdentifier>{bade0947-e8d8-44f5-bf8d-9035fbd28f67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\연산자 오버로딩">
+      <UniqueIdentifier>{9aa4f5eb-e7a6-4813-9559-1dcee1ede642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\문자열">
+      <UniqueIdentifier>{e859eb41-3ac9-4068-878b-7622273f2353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\알고리즘">
+      <UniqueIdentifier>{d3a1b82d-d9de-4506-9e62-c514d4cf71d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\템플릿">
+      <UniqueIdentifier>{13c38264-b67b-4690-a661-be96727ee5a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\_Form">
+      <UniqueIdentifier>{d8debb3a-0c32-42ac-b792-fcfe1f131e96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\C/C++ 기본">
+      <UniqueIdentifier>{e39dbd27-62ed-4b45-a384-c72030f3260f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\예외처리">
+      <UniqueIdentifier>{ea05ae5e-250d-4e72-bd58-1f961a0e6f94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\형변환">
+      <UniqueIdentifier>{3a1070a2-94d0-485b-bbb3-4b87f3839159}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="참조형에만 virtual 작동.cpp">
+      <Filter>소스 파일\객체</Filter>
+    </ClCompile>
+    <ClCompile Include="객체 선언법.cpp">
+      <Filter>소스 파일\객체</Filter>
+    </ClCompile>
+    <ClCompile Include="대입 연산자 다형성 불가.cpp">
+      <Filter>소스 파일\객체</Filter>
+    </ClCompile>
+    <ClCompile Include="2차원 배열 객체.cpp">
+      <Filter>소스 파일\다차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="2차원 객체 포인터 배열.cpp">
+      <Filter>소스 파일\다차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="3차원 객체 배열.cpp">
+      <Filter>소스 파일\다차원 배열</Filter>
+    </ClCompile>
+    <ClCompile Include="스마트 포인터 기본.cpp">
+      <Filter>소스 파일\포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="Functor.cpp">
+      <Filter>소스 파일\객체</Filter>
+    </ClCompile>
+    <ClCompile Include="cout이 dynamic type에 따라 작동하게 오버로딩.cpp">
+      <Filter>소스 파일\연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="형변환 오버로딩.cpp">
+      <Filter>소스 파일\연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="대입 연산자 자동 형변환.cpp">
+      <Filter>소스 파일\연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Main.cpp">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="02_String.cpp">
+      <Filter>소스 파일\문자열</Filter>
+    </ClCompile>
+    <ClCompile Include="Swap.cpp">
+      <Filter>소스 파일\알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="클래스 템플릿.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="파일 분할 Main.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="파일 분할 Point.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="Main문 기본 구조.cpp">
+      <Filter>소스 파일\_Form</Filter>
+    </ClCompile>
+    <ClCompile Include="클래스 기본 구조.cpp">
+      <Filter>소스 파일\_Form</Filter>
+    </ClCompile>
+    <ClCompile Include="스마트 포인터 템플릿.cpp">
+      <Filter>소스 파일\포인터</Filter>
+    </ClCompile>
+    <ClCompile Include="MainProcess.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="외부 파일 전역함수.cpp">
+      <Filter>소스 파일\C/C++ 기본</Filter>
+    </ClCompile>
+    <ClCompile Include="외부 파일 전역함수 Main.cpp">
+      <Filter>소스 파일\C/C++ 기본</Filter>
+    </ClCompile>
+    <ClCompile Include="_Form.cpp">
+      <Filter>소스 파일\_Form</Filter>
+    </ClCompile>
+    <ClCompile Include="클래스 템플릿 특수화.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="함수 템플릿 특수화.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="템플릿 파라미터에 변수.cpp">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="e_ bad_alloc.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="모든 예외 처리.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="ReThrow %28stack trace 가능할듯%29.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="b_ Exception 클래스.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="b_예외처리 기본.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="e_ bad_cast.cpp">
+      <Filter>소스 파일\예외처리</Filter>
+    </ClCompile>
+    <ClCompile Include="02_DynamicCasting.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+    <ClCompile Include="03_StaticCasting.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+    <ClCompile Include="04_ConstCasting.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+    <ClCompile Include="05_ReinterpretCasting.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+    <ClCompile Include="01_C 형변환.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+    <ClCompile Include="02_DynamicCasting Polymorphic.cpp">
+      <Filter>소스 파일\형변환</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="02_String.h">
+      <Filter>소스 파일\문자열</Filter>
+    </ClInclude>
+    <ClInclude Include="파일 분할 Point.h">
+      <Filter>소스 파일\템플릿</Filter>
+    </ClInclude>
+    <ClInclude Include="외부 파일 전역함수.h">
+      <Filter>소스 파일\C/C++ 기본</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_정렬 기준.txt">
+      <Filter>소스 파일\예외처리</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

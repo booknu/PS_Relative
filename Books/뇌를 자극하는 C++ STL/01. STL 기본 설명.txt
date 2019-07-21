@@ -1,0 +1,13 @@
+[[ STL 구성 요소 ]]
+1. Container: = Collection / Data Structure
+2. Iterator	: 포인터와 비슷한 개념, 반복자
+3. Algorithm
+4. 함수객체	: operator() 연산자를 오버로딩한 객체. 컨테이너, 알고리즘 등에 Client 정책을 반영
+5. Adaptor	: 구성요소의 인터페이스를 변경해 새로운 구성요소처럼 보이게 만듬
+6. Allocator: Container의 메모리 할당 정책을 캡슐화한 클래스 객체
+
+
+[[ STL 특성 ]]
+1. 효율성
+2. Generic(일반화) 프로그래밍 (재사용성)
+3. 확장성

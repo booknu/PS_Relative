@@ -1,0 +1,13 @@
+[ 특  징 ]
+1. 순차열의 원소를 조사, 변경, 관리, 처리할 목적
+2. 한 쌍의 반복자 [begin, end) 필요
+3. 대부분은 순방향 반복자, 가끔은 임의 접근 반복자 필요
+
+[ 종  류 ]
+1. non-modifying algorithm: 원소 수정하지 않음
+2. modifying algorithm: 원소 수정
+3. removing algorithm: 제거
+4. mutating algorithm: 변경
+5. sorting algorithm: 정렬
+6. sorted range algorithm: 정렬된
+7. numeric algorithm: 수치

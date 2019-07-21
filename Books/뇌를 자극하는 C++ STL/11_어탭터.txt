@@ -1,0 +1,31 @@
+[ 특  징 ]
+구성 요소의 인터페이스를 변경해서 새로운 구성요소처럼 보이게 만듬
+
+[ 종  류 ]
+1. 컨테이너 어댑터	: stack, queue, priority_queue
+2. 반복자 어댑터		: reverse_iterator, back_insert_iterator, front_insert_iterator, front_insert_iterator, insert_iterator
+3. 함수 어댑터		: binder(바인더), negator(부정자), 함수 포인터 어댑터 
+
+[ 컨테이너 어댑터 ]
+- 대표적으로 stack컨테이너 어댑터가 있음
+- stack은 일반 컨테이너를 stack 컨테이너로 변환
+- empty, size, push_back, pop_back, back 인터페이스를 지원하는 모든 컨테이너는 stack으로 변환 가능
+  (stack의 템플릿 매개변수에 다른 컨테이너를 주는 것으로 가능)
+  ( stack<typename T, typename Container = deque<T>> )
+- 시퀀스 컨테이너는 모두 stack 컨테이너로 변환 가능
+- stack의 default 컨테이너는 deque
+
+[ 반복자 어댑터 ]
+- reverse_iterator의 경우는 일반 iterator의 동작 방식을 반대로 동작시킨다. (++, -- 동작)
+- iterator의 경우는 실제 가르키는 원소와 값이 모두 같지만,
+  reverse_iterator의 경우는 실제 가르키는 원소의 다음(++) 원소가 값이 된다. (p152 참조)
+- 모든 컨테이너는 reverse_iterator을 typedef 타입으로 정의함.
+- rbegin()과 rend()로 reverse_iterator을 반환
+- 알고리즘 수행시 정방향 반복자와 호환되도록 설계했기 때문.
+  대부분의 알고리즘은 +연산자만으로 구현되어 있으며, 이렇게 구현된 알고리즘에 정방향, 역방향 순회가 모두 가능
+
+
+[ 함수 어댑터 ]
+- 부정자 not2의 경우는 조건자 함수 객체(이항 연산)를 NOT로 변환한다.
+- bool not2(Functional &func) 같은 구조이며,
+  bool을 반환하는 조건자 함수 객체(함수 포인터)인 func를 인자로 받아 그것과 반대되는 값을 반환한다.

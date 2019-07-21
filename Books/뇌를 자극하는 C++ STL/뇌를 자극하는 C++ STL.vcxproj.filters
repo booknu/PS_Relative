@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법">
+      <UniqueIdentifier>{4b46a831-d194-497a-a604-4e75259db833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩">
+      <UniqueIdentifier>{81787b6b-6913-430c-b10a-7a598378a3b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\2. 연산자 오버로딩 정의, 사용">
+      <UniqueIdentifier>{089a7a63-976f-4cdd-8b74-f06679de2618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\3. 단항 연산자">
+      <UniqueIdentifier>{12c46048-296a-421a-8a46-7e7fec4c27eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\4. 이항 연산자">
+      <UniqueIdentifier>{dbe0b52a-6b9e-415b-b0fa-2549088d396e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\5. 전역 함수 연산자 오버로딩">
+      <UniqueIdentifier>{15812451-c259-4e9e-b23c-690cc358b465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\6. STL 주요 연산자 오버로딩">
+      <UniqueIdentifier>{367ca936-e6ff-4ec6-9048-04b6dd7d0deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\7. 타입 변환 연산자">
+      <UniqueIdentifier>{ccd48e11-f8c9-43a0-aff4-b7572c8f4a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\__문제">
+      <UniqueIdentifier>{9a1c5915-8171-4c05-8b33-bc1d12c1e8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기">
+      <UniqueIdentifier>{1f9c2f2f-37bf-4801-a073-a8f78bcd534f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\02장. 함수 포인터">
+      <UniqueIdentifier>{35270299-aaa3-4b54-a35d-31fa4839a0c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\02장. 함수 포인터\01. 함수 포인터란">
+      <UniqueIdentifier>{80c6f7c1-75dd-4b35-99c8-d052b438acca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\02장. 함수 포인터\02. 함수 포인터의 종류">
+      <UniqueIdentifier>{e95077e9-b50b-40b6-a118-329c0134bcc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\02장. 함수 포인터\03. 클라이언트 코드와 서버 코드">
+      <UniqueIdentifier>{a15420c3-5a97-480c-98b2-1972d091ec8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\03장. 함수 객체">
+      <UniqueIdentifier>{90f8c1c2-7e74-4961-927b-8e91629e491b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\03장. 함수 객체\01. 함수 객체란">
+      <UniqueIdentifier>{5a2c4280-d64b-4f64-a505-298e69a8d4b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\03장. 함수 객체\02. 함수 객체 구현">
+      <UniqueIdentifier>{9bc258fc-715a-46e0-b546-409735f48141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\03장. 함수 객체\__문제">
+      <UniqueIdentifier>{815f5c34-9474-4600-ae59-e8640c4ed767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\04장. 템플릿">
+      <UniqueIdentifier>{0dd7caac-5801-4442-be7f-49f26a22147f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿">
+      <UniqueIdentifier>{bffc18ff-7288-413d-b7be-11a995704efb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\04장. 템플릿\02. 클래스 템플릿">
+      <UniqueIdentifier>{f66e1e1e-0196-4f45-ba32-15bf6f62dd3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제">
+      <UniqueIdentifier>{fed5367d-4109-4466-9621-d874c2b8e846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 1. C++ 문법\04장. 템플릿\__문제">
+      <UniqueIdentifier>{91f69ee4-824a-4c53-a555-e5ffe6f9c075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\05장. STL 소개">
+      <UniqueIdentifier>{7082a85b-e93b-4a9b-9d1a-a9125992fe35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\05장. STL 소개\01. STL이란">
+      <UniqueIdentifier>{eb8ac0fc-e344-4e97-b733-be4d0ba1071e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에">
+      <UniqueIdentifier>{544eb9f3-ebde-420e-a415-590a76b0a202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너">
+      <UniqueIdentifier>{af318717-4835-4145-9d6d-76aceb31cb39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너">
+      <UniqueIdentifier>{cc34bac4-d479-4cdf-ad4d-b813878e64e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너">
+      <UniqueIdentifier>{df96f805-15d6-4d80-b97e-c93c9b5499eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너">
+      <UniqueIdentifier>{43967faa-c32f-4f5e-bc92-96be9da745a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너">
+      <UniqueIdentifier>{15f7a916-1f51-4aa6-96d4-0d16cbc0d73d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너">
+      <UniqueIdentifier>{60cddec7-05a8-430c-8d10-492ec830ed40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\02. multiset 컨테이너">
+      <UniqueIdentifier>{0eb10b59-f27b-4278-97ee-ef3ed2bc37dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너">
+      <UniqueIdentifier>{3c9d1336-f6ce-4b57-9771-199562cec304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\04. multimap 컨테이너">
+      <UniqueIdentifier>{d5f86c89-783b-449b-a6c8-ee89d667aecc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘">
+      <UniqueIdentifier>{e04bf2ad-76aa-4695-b06c-c99446d14548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘">
+      <UniqueIdentifier>{5e2a3342-189c-4b90-8b64-56fbba07b86d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘">
+      <UniqueIdentifier>{eb9ffcb3-fbbe-49ce-ae50-12e1dde9a9f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘">
+      <UniqueIdentifier>{ecb78f48-528b-463d-b2ba-841503c69766}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘">
+      <UniqueIdentifier>{8c1e3a5f-4d51-44d4-bae4-20664ff9bea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘">
+      <UniqueIdentifier>{31a2691f-2d48-480b-9f90-1cd23842e45f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘">
+      <UniqueIdentifier>{fb252ddf-708b-4091-87e2-de40060d35b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Part 2. STL 이해하기\08장. 알고리즘\07. 수치 알고리즘">
+      <UniqueIdentifier>{3cdbc46e-773c-4416-a079-a233d60401f9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="1. operator+().cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\2. 연산자 오버로딩 정의, 사용</Filter>
+    </ClCompile>
+    <ClCompile Include="_Form.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1. ++.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\3. 단항 연산자</Filter>
+    </ClCompile>
+    <ClCompile Include="1. ==, !=.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\4. 이항 연산자</Filter>
+    </ClCompile>
+    <ClCompile Include="1. operator outstream.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\5. 전역 함수 연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="1. 함수 객체 %28%29 오버로딩.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\6. STL 주요 연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="2. 함수 객체 여러 인자.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\6. STL 주요 연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="3. [].cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\6. STL 주요 연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="4. 포인터 연산자.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\6. STL 주요 연산자 오버로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="1. 생성자를 이용한 타입변환.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\7. 타입 변환 연산자</Filter>
+    </ClCompile>
+    <ClCompile Include="2. 타입변환 연산자 오버로딩.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\7. 타입 변환 연산자</Filter>
+    </ClCompile>
+    <ClCompile Include="P04_최소한의 String 클래스.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\01장. 연산자 오버로딩\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="01_함수 포인터 기초.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\01. 함수 포인터란</Filter>
+    </ClCompile>
+    <ClCompile Include="02_C++ 함수 호출 방식.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\01. 함수 포인터란</Filter>
+    </ClCompile>
+    <ClCompile Include="01_정적 함수 포인터.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\02. 함수 포인터의 종류</Filter>
+    </ClCompile>
+    <ClCompile Include="02_멤버 함수 포인터.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\02. 함수 포인터의 종류</Filter>
+    </ClCompile>
+    <ClCompile Include="01_서버, 클라이언트 코드.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\03. 클라이언트 코드와 서버 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="02_콜백 함수.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\03. 클라이언트 코드와 서버 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="03_함수 포인터를 이용한 콜백 메커니즘 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\03. 클라이언트 코드와 서버 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="04_STL의 for_each 알고리즘 사용.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\02장. 함수 포인터\03. 클라이언트 코드와 서버 코드</Filter>
+    </ClCompile>
+    <ClCompile Include="01_함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\01. 함수 객체란</Filter>
+    </ClCompile>
+    <ClCompile Include="02_인자 받는 함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\01. 함수 객체란</Filter>
+    </ClCompile>
+    <ClCompile Include="03_멤버 변수를 갖는 함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\01. 함수 객체란</Filter>
+    </ClCompile>
+    <ClCompile Include="04_함수 객체를 통해 콜백 함수 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\01. 함수 객체란</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Less, Greater 함수 객체의 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\02. 함수 객체 구현</Filter>
+    </ClCompile>
+    <ClCompile Include="02_STL의 Less, Greater 함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\02. 함수 객체 구현</Filter>
+    </ClCompile>
+    <ClCompile Include="03_plus, minus 함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\02. 함수 객체 구현</Filter>
+    </ClCompile>
+    <ClCompile Include="P02_Equal 클래스 구현하기.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="P03_Adder클래스 구현하기.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\03장. 함수 객체\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="01_함수 템플릿.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="02_함수 템플릿 (여러 매개변수).cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Swap 함수 템플릿.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="04_배열 출력 함수 템플릿.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="05_함수 템플릿 특수화.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\01. 함수 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Array 클래스 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\02. 클래스 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="02_default 매개변수 값을 갖는 클래스 템플릿 Array.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\02. 클래스 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="03_클래스 템플릿 특수화.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\02. 클래스 템플릿</Filter>
+    </ClCompile>
+    <ClCompile Include="01_함수 템플릿을 활용한 For_each.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제</Filter>
+    </ClCompile>
+    <ClCompile Include="02_클래스 템플릿을 이용한 Functor For_each.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제</Filter>
+    </ClCompile>
+    <ClCompile Include="03_템플릿 Less, Greater.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제</Filter>
+    </ClCompile>
+    <ClCompile Include="04_return타입과 arg타입을 인자로 갖는 함수 객체.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제</Filter>
+    </ClCompile>
+    <ClCompile Include="05_pair 클래스 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\03. STL을 위한 템플릿 예제</Filter>
+    </ClCompile>
+    <ClCompile Include="P01_함수 템플릿 Copy 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="P02_클래스 템플릿 Stack 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="P03_클래스 템플릿 Queue 구현.cpp">
+      <Filter>소스 파일\Part 1. C++ 문법\04장. 템플릿\__문제</Filter>
+    </ClCompile>
+    <ClCompile Include="02_vector 컨테이너.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="04_반복자를 이용한 vector 순회.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="05_vector의 Random Access Iterator.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="06_deque의 Random Access Iterator.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="08_find 알고리즘.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="09_sort 알고리즘 vector, list.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="10_함수 객체를 적용한 sort 알고리즘.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="12_stack 컨테이너.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="13_stack vector 컨테이너 적용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="14_reverse_iterator.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="15_reverse_iterator rbegin, rend.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="16_정방향 반복자와 역방향 반복자가 가리키는 값.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="17_함수 어댑터 not2.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="19_컨테이너 기본 할당기 allocator.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </ClCompile>
+    <ClCompile Include="01_push_back.%28%29cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_size_type.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_size%28%29, capacity%28%29, max_size%28%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_reserve().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="05_생성자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="06_생성자 초기값 지정.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="07_resize().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="08_clear(), empty().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="09_swap을 통한 clear과 동시에 할당 메모리 제거.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="10_swap().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="11_front(), back().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="12_[]연산자, at().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="14_begin(), end().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="15_iterator 연산.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="16_일반 반복자와 const 반복자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="17_const와 반복자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="18_reverse_iterator.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="19_insert().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="13_assign%28%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="20_erase().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="21_반복자로 동작하는 assign().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="22_vector끼리의 비교.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\01. vector 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_push_back%28%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_push_front().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_반복자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="05_insert().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="01_push_back(), push_front().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_insert(), erase().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_remove().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_remove_if().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="05_splice().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="06_reverse().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="07_unique().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="08_unique 조건자 사용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="09_sort()  list만의 sort.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="10_sort%28%29 조건자 사용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="11_merge().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="12_merge() 조건자 사용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\03. list 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="01_insert().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_insert%28%29의 반환값 pair.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_insert() 탐색 위치 지정.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_insert() 정렬 기준.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="05_key_comp(), value_comp().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="06_count().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="07_find().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="08_set의 정렬 기준을 사용한 값 비교.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="09_lower_bound(), upper_bound().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="10_equal_range().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\01. set 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="01_insert()   multiset.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\02. multiset 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_search 관련 함수.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\02. multiset 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_equal_range().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\02. multiset 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="01_insert()   map.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_insert()의 반환값.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="03_[] 연산자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_정렬 기준 조건자 바꾸기.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="05_찾기 관련 함수.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="06_[] 연산자 테스트.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\03. map 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="01_count(), find().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\04. multimap 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="02_lower_bound(), upper_bound(), equal_range().cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\07장. 연관 컨테이너\04. multimap 컨테이너</Filter>
+    </ClCompile>
+    <ClCompile Include="04_count(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_adjacent_find%28b, e%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_adjacent_find%28b, e%29 반환 반복자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_adjacent_find%28b, e, f%29 조건자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_count_if(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_equal(b, e, b2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="07_equal(b, e, b2, f) 조건자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="08_find(b, e, x), find(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="10_find_end(b, e, b2, e2, f), search(b, e, b2, e2, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="09_find_end%28b, e, b2, e2%29, search%28b, e, b2, e2%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="11_find_first_of(b, e, b2, e2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="12_find_first_of(b, e, b2, e2, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="13_for_each(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="14_for_each(b, e, f) 함수객체 사용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="15_lexicographical_compare(b, e, b2, e2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="16_lexicographical_compare(b, e, b2, e2, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="17_max(a, b), min(a, b).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="18_max_element(b, e), min_element(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="19_max_element(b, e, f), min_element(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="20_mismatch%28b, e, b2%29, mismatch%28b, e, b2, f%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="21_search_n(b, e, n, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="22_search_n(b, e, n, x, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\01. 원소를 수정하지 않는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_copy(b, e, b2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_copy_backward(b, e, b2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_fill(b, e, x), fill_n(b, n, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_for_each(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_for_each(b, e, f) Functor.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_generate(b, e, f), generate_n(b, n, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="07_swap(a, b), iter_swap(iterA, iterB).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="08_merge(b, e, b2, e2, t).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="09_merge(b, e, b2, e2, t, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="10_replace(b, e, x, x2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="11_replace_if(b, e, f, x2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="12_replace_copy(b, e, t, x, x2), replace_copy_if(b, e, t, f, x2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="13_swap_ranges(b, e, b2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="14_transform(b, e, t, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="15_transform(b, e, b2, t, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\02. 원소를 수정하는 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_remove(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_remove(b, e, x) 후의 erase(b, e) 사용.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_remove_if(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_remove_copy(b, e, t, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_unique(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_unique(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\03. 제거 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_next_permutation(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_next_permutation(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_partition(b, e, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_stable_partition%28b, e, f%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_random_shuffle(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_reverse(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="07_reverse_copy(b, e, t).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="08_rotate(b, m, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="09_rotate_copy%28b, m, e, t%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\04. 변경 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_make_heap(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_push_heap(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_sort_heap(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_heap 알고리즘 조건자.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_nth_element(b, m, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_sort(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="07_stable_sort(b, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="08_partial_sort(b, m, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="09_partial_sort_copy%28b, e, b2, e2%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\05. 정렬 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_binary_search(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_binary_search(b, e, x, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_includes(b, e, b2, e2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_lower_bound(b, e, x), upper_bound(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="05_equal_range(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="06_merge(b, e, b2, e2, t).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="07_inplace_merge(b, m, e).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="08_set_union(b, e, b2, e2, t).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="09_set_intersection, set_difference, set_symmetric_difference.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\06. 정렬된 범위 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="01_accumulate(b, e, x).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\07. 수치 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="02_accumulate(b, e, x, f).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\07. 수치 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="03_inner_product%28b, e, b2, x%29.cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\07. 수치 알고리즘</Filter>
+    </ClCompile>
+    <ClCompile Include="04_inner_product(b, e, b2, x, f1, f2).cpp">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘\07. 수치 알고리즘</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="01. STL 기본 설명.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\01. STL이란</Filter>
+    </Text>
+    <Text Include="01_컨테이너의 종류.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </Text>
+    <Text Include="03_반복자.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </Text>
+    <Text Include="07_알고리즘.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </Text>
+    <Text Include="11_어탭터.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </Text>
+    <Text Include="18_할당기.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\05장. STL 소개\02. STL을 한눈에</Filter>
+    </Text>
+    <Text Include="01_deque의 구조.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\06장. 시퀀스 컨테이너\02. deque 컨테이너</Filter>
+    </Text>
+    <Text Include="00_알고리즘 개요.txt">
+      <Filter>소스 파일\Part 2. STL 이해하기\08장. 알고리즘</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

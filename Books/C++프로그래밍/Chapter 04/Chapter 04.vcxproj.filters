@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01_정보은닉">
+      <UniqueIdentifier>{ddb82a00-ac5e-4788-8d39-a9c75d24e463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_정보은닉\실습">
+      <UniqueIdentifier>{d2575e2f-e453-4b0b-b60a-abfbcfbd4c38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_정보은닉\내용">
+      <UniqueIdentifier>{c872d767-5ccc-41f8-8967-4720d4a0a712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_캡슐화">
+      <UniqueIdentifier>{2225e8dc-0355-4477-9b55-564a4324af0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_캡슐화\실습">
+      <UniqueIdentifier>{15e466b4-fb9b-4b1f-8ec2-52ac590370a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_캡슐화\내용">
+      <UniqueIdentifier>{88440384-89d4-4784-b22f-6688569c2980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_생성자와 소멸자">
+      <UniqueIdentifier>{2192b54d-b9a2-4100-89ec-d615e8c92ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_생성자와 소멸자\실습">
+      <UniqueIdentifier>{d89b91a4-0994-4d8c-a7e6-6bccc9337d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_생성자와 소멸자\내용">
+      <UniqueIdentifier>{2c6811bc-d145-4cfb-a46c-b99eb7f72aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04_클래스 배열 &amp; this 포인터">
+      <UniqueIdentifier>{e9431146-a54d-403f-b1e9-6f3ce9cb6610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04_클래스 배열 &amp; this 포인터\실습">
+      <UniqueIdentifier>{86007a49-1f5e-46dd-ba47-bbf1e39751e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04_클래스 배열 &amp; this 포인터\내용">
+      <UniqueIdentifier>{bae202a6-b31c-491e-b0cf-67ad5e4111f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05_OOP_project">
+      <UniqueIdentifier>{263986d2-41a1-4d5b-8a46-3ae36a2678af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="01_RectFault.cpp">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Chapter 01\Chapter 01\_Form.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Point.cpp">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Rect.cpp">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Main.cpp">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P01.cpp">
+      <Filter>소스 파일\01_정보은닉\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Encaps1.cpp">
+      <Filter>소스 파일\02_캡슐화\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Encaps2.cpp">
+      <Filter>소스 파일\02_캡슐화\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_P01.cpp">
+      <Filter>소스 파일\02_캡슐화\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Constructor1.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Constructor2.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_FruitSaleConstructor.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Main.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Point.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Rect.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="05_FruitSaleInitializer.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="06_RefereceMember.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="07_PrivateConstructor.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="08_Destructor.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_P01.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="03_P02.cpp">
+      <Filter>소스 파일\03_생성자와 소멸자\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_ObjArr.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_ObjPtrArr.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="2차원_객체_포인터_배열.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="3차원_객체_배열.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_ThisPointer.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_SameName.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="05_SelfRef.cpp">
+      <Filter>소스 파일\04_클래스 배열 &amp; this 포인터\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_Account.cpp">
+      <Filter>소스 파일\05_OOP_project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_Main.cpp">
+      <Filter>소스 파일\05_OOP_project</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="02_Point.h">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="02_Rect.h">
+      <Filter>소스 파일\01_정보은닉\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="04_Point.h">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="04_Rect.h">
+      <Filter>소스 파일\03_생성자와 소멸자\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_Account.h">
+      <Filter>소스 파일\05_OOP_project</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

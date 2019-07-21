@@ -1,0 +1,64 @@
+1. dynamic_cast
+	[ 조건 ]
+	Derived -> Base
+	Base -> Derived (Base가 Polymorphic Class 일 경우)
+
+	[ 대상 ]
+	포인터형, 참조자형
+
+	[ 제한 ]
+	Base -> Derived 시
+	Dynamic Type도 Base -> Derived라면,
+	포인터로 NULL을 반환한다.	
+
+	[ 특징 ]
+	1. 안정적이다.
+	2. but, dynamic type을 검사하기 때문에 속도가 느리다.
+
+
+
+2. static_cast
+	[ 조건 ]
+	Derived -> Base
+	Base -> Derived
+
+	[ 대상 ]
+	포인터형, 참조자형
+
+	[제한]
+	Base -> Derived 시
+	Dynamic Type도 Base -> Derived라도,
+	포인터는 그대로 반환됨
+	(but, 오동작을 할 확률이 높으니 불안정)
+
+	[ 특징 ]
+	1. 불안정하다.
+	2. but, dynamic type을 검사하지 않기 때문에 속도가 빠르다.
+
+
+
+3. const_cast
+	[ 사용조건 ]
+	const type -> type
+
+	[ 대상 ]
+	포인터형, 참조자형
+
+	[ 사용 예 ]
+	어떤 함수의 인자가 const형이 아닌데, 실제로 내부에서 값이 바뀌지 않는다면
+	const 객체/변수는 이 함수의 인자로 보낼 수 없다.
+	이럴 때 const_cast를 사용하면 함수를 호출 할 수 있다.
+
+
+
+4. reinterpret_cast
+	[ 사용조건 ]
+	모든 타입
+
+	[ 대상 ]
+	모든 대상
+
+	[ 사용 예 ]
+	1. 변수에 대해 1byte 씩 접근하고 싶을 때
+	2. 주소값(*)을 int로 변환하고 싶을 때
+	3. int를 주소값(*)으로 변환하고 싶을 때

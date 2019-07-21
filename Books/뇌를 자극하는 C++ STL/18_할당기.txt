@@ -1,0 +1,14 @@
+[ 특  징 ]
+- 컨테이너의 메모리 할당 정보, 정책(메모리 할당 모델)을 캡슐화
+- 할당기는 클래스 템플릿, 모든 컨테이너는 기본 할당기 사용
+- C++의 new, delete연산자를 사용자가 오버로딩해서 사용할 수 있듯이,
+  STL 할당기도 사용자가 직접 할당기를 정의하고 사용 가능
+
+[ 사용분야 ]
+- Multithreading
+- implementation
+
+[ 사용법 ]
+- 모든 컨테이너는 템플릿 매개변수에서 할당기를 인자로 받음
+  ( vector<typename T, typename Alloc = allocator<T>> )
+  ( set<typename T, typename Pred = less<T>, typename Alloc = allocator<T>> )

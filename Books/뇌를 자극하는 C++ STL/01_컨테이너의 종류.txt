@@ -1,0 +1,22 @@
+{ 자동 정렬 기준으로 분류 }
+
+	[[ 표준 Sequence 컨테이너 ]]
+	1. Linear
+	2. vector, deque, list
+
+	[[ 표준 Associative 컨테이너 ]]
+	1. Non-Linear
+	2. set, multiset, map, multimap
+	3. 특정 정렬 기준에 의해 자동 정렬되는 컨테이너
+
+
+{ 연속된 메모리 단위로 저장하느냐에 따른 분류 }
+	
+	[[ Array기반 ]]
+	1. 연속된 메모리에 저장
+	2. Random Access
+	3. vector, deque
+
+	[[ Node 기반 ]]
+	1. 연결 구조에 저장
+	2. list, set, multiset, multimap

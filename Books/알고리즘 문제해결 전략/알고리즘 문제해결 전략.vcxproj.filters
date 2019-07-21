@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\소스코드">
+      <UniqueIdentifier>{830108e8-9d64-4571-8acf-c842dec015dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\_Form &amp; Solution">
+      <UniqueIdentifier>{2af16d84-0657-45ec-b920-ff4ee201580e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\소스코드\11_조합 탐색">
+      <UniqueIdentifier>{a2ab8617-425d-458e-b37a-168be42a86ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\_유틸리티">
+      <UniqueIdentifier>{a5de46b8-345a-4dfd-a725-369aff7e6dbd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_MainProcess.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="_Form.cpp">
+      <Filter>소스 파일\_Form &amp; Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="_Main문 기본 구조.cpp">
+      <Filter>소스 파일\_Form &amp; Solution</Filter>
+    </ClCompile>
+    <ClCompile Include="00_TSP 내 방법.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="비트마스킹.cpp">
+      <Filter>소스 파일\_유틸리티</Filter>
+    </ClCompile>
+    <ClCompile Include="01_TSP 완전탐색.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="Min, Max.cpp">
+      <Filter>소스 파일\_유틸리티</Filter>
+    </ClCompile>
+    <ClCompile Include="02_TSP 최적해보다 나쁘면 그만두기.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="03_TSP 단순 휴레스틱.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="TSP data generate.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="04_TSP 가까운 정점 우선 방문.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="05_TSP 지나온 경로를 이용.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="06_TSP MST 휴레스틱.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="07_TSP 메모이제이션.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="08_게임판 덮기 2.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+    <ClCompile Include="09_알러지가 심한 친구들.cpp">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="tsp input.txt">
+      <Filter>소스 파일\소스코드\11_조합 탐색</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

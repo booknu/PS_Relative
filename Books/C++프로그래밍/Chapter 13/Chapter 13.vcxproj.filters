@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01_Template">
+      <UniqueIdentifier>{4de4d12c-9abd-4374-be78-ff696155fc2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_Template\실습">
+      <UniqueIdentifier>{40b38bd5-0ad9-4ae1-8fa6-04b7303638e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_Template\내용">
+      <UniqueIdentifier>{b5f28b94-f6f0-4060-b9e2-24ae8a86e36d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class Template">
+      <UniqueIdentifier>{02a5639c-9780-4230-b234-ad469abcefbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class Template\실습">
+      <UniqueIdentifier>{56f4aeb6-1f5f-4c89-88e6-ff321353a5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class Template\내용">
+      <UniqueIdentifier>{cdeababc-24c7-4761-872e-711a264cbb4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_OOP project">
+      <UniqueIdentifier>{6f94b516-bc31-4afe-a384-e760675ffcc6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_Form.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="01_AddFuncTemplate.cpp">
+      <Filter>소스 파일\01_Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Template, Normal Func 공존.cpp">
+      <Filter>소스 파일\01_Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_PrimitiveFuncTemplate.cpp">
+      <Filter>소스 파일\01_Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P01.cpp">
+      <Filter>소스 파일\01_Template\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P02.cpp">
+      <Filter>소스 파일\01_Template\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="04_NeedSpecialFuncTemplate.cpp">
+      <Filter>소스 파일\01_Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="05_SpecialFunctionTemplate.cpp">
+      <Filter>소스 파일\01_Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_ClassTemplate.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_ClassTemplateSeperated.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_PointTemplate.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_PointMain.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Point.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_ArrTemplateMain.cpp">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_P01.cpp">
+      <Filter>소스 파일\02_Class Template\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_Account.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_AccountHandler.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_BankingCommonDecl.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_HighCreditAccount.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_Main.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_NormalAccount.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+    <ClCompile Include="OOP_String.cpp">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="03_PointTemplate.h">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="04_ArrTemplate.h">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="04_Point.h">
+      <Filter>소스 파일\02_Class Template\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_Account.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_AccountHandler.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_HighCreditAccount.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_NormalAccount.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_String.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+    <ClInclude Include="OOP_Array.h">
+      <Filter>소스 파일\03_OOP project</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

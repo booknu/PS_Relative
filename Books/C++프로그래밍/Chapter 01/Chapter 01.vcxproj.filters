@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01 I/O">
+      <UniqueIdentifier>{96e9c72c-bd19-41cf-bfda-706dd609d3fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01 I/O\내용">
+      <UniqueIdentifier>{87cb4437-6db6-4983-aa75-2e5cfd582a45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01 I/O\실습">
+      <UniqueIdentifier>{2cb366cb-d459-4824-96cb-1d8f559b0c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02 Overloading">
+      <UniqueIdentifier>{37c97909-9e37-4c85-a126-3126a246b1df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02 Overloading\내용">
+      <UniqueIdentifier>{b1efad7b-c55a-4487-bc58-d4b8c4f2a36b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02 Overloading\실습">
+      <UniqueIdentifier>{dde93cc4-a5b1-4dc6-addd-3383b098e8fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03 매개변수의 Default Value">
+      <UniqueIdentifier>{249d68bc-6ece-4b73-9cdf-0fe6b1e2abe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03 매개변수의 Default Value\실습">
+      <UniqueIdentifier>{e751bb29-6fea-43b6-b536-c27854711fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03 매개변수의 Default Value\내용">
+      <UniqueIdentifier>{ecf260f6-8fa9-49c5-98d5-6ca9953ae422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04 inline 함수">
+      <UniqueIdentifier>{0ee07c3b-9620-4ddd-92b5-eea47bc2d143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04 inline 함수\실습">
+      <UniqueIdentifier>{ec027a71-4f4d-4463-9954-91ada8a557fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04 inline 함수\내용">
+      <UniqueIdentifier>{93c95eb7-feea-45d5-af3d-4f8a40ddfe06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05_namespace">
+      <UniqueIdentifier>{dccf6db4-f10b-4a37-9448-0bd710255701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05_namespace\실습">
+      <UniqueIdentifier>{b5e18592-5b7c-4644-8942-406c17f117f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05_namespace\내용">
+      <UniqueIdentifier>{56ef5be9-b4d0-41a2-9e50-15c54554bbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\06_OOP_Project">
+      <UniqueIdentifier>{b03a45c0-2999-42d2-b618-93b613ef5b8a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_Form.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Output.cpp">
+      <Filter>소스 파일\01 I/O\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Input.cpp">
+      <Filter>소스 파일\01 I/O\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_LocalVariable.cpp">
+      <Filter>소스 파일\01 I/O\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_CharArrayIO.cpp">
+      <Filter>소스 파일\01 I/O\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Overloading.cpp">
+      <Filter>소스 파일\02 Overloading\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_DefaultValue1.cpp">
+      <Filter>소스 파일\03 매개변수의 Default Value\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_DefaultValue2.cpp">
+      <Filter>소스 파일\03 매개변수의 Default Value\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_DefaultValue3.cpp">
+      <Filter>소스 파일\03 매개변수의 Default Value\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_P01.cpp">
+      <Filter>소스 파일\02 Overloading\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P01.cpp">
+      <Filter>소스 파일\01 I/O\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P02.cpp">
+      <Filter>소스 파일\01 I/O\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P03.cpp">
+      <Filter>소스 파일\01 I/O\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P04.cpp">
+      <Filter>소스 파일\01 I/O\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="03_P01.cpp">
+      <Filter>소스 파일\03 매개변수의 Default Value\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="03_P02.cpp">
+      <Filter>소스 파일\03 매개변수의 Default Value\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Inline.cpp">
+      <Filter>소스 파일\04 inline 함수\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Namespace1.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Namespace2.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_Namespace3.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_Namespace4.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="myfuncs.cpp">
+      <Filter>소스 파일\05_namespace\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="05_UsingDcl1.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="06_UsingDcl2.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="07_UsingDcl3.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="08_NameAlias.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="09_가려진_전역변수_접근.cpp">
+      <Filter>소스 파일\05_namespace\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="mymain.cpp">
+      <Filter>소스 파일\05_namespace\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\06_OOP_Project</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="myheader.h">
+      <Filter>소스 파일\05_namespace\실습</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

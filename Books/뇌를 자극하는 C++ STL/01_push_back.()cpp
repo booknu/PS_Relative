@@ -1,0 +1,27 @@
+/************
+<주소>		: p167
+**********
+<해결방안>	:
+
+**********
+<오답노트>	:
+
+*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(void) {
+	vector<int> v;
+
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+
+	for (vector<int>::iterator iter = v.begin(); iter != v.end(); iter++) {
+		cout << *iter << endl;
+	}
+
+	return 0;
+}

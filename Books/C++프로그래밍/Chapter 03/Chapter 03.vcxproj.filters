@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\01_C++의 구조체">
+      <UniqueIdentifier>{514f36fe-45d4-4ebc-8a60-1dc5d40b6d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_C++의 구조체\실습">
+      <UniqueIdentifier>{4711733d-8f4d-49c7-957a-86c691e56c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_C++의 구조체\내용">
+      <UniqueIdentifier>{34965386-b36e-43f3-8a14-7e604b62cbf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class와 Object">
+      <UniqueIdentifier>{8fa9c9d8-5275-4c73-af63-553f3e8a9d39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class와 Object\실습">
+      <UniqueIdentifier>{f7780b7a-2f29-4f63-8807-5189ec9f8811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Class와 Object\내용">
+      <UniqueIdentifier>{fc2f4c57-9e6b-4783-822e-fad6b6ccdcb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_OOP의 이해">
+      <UniqueIdentifier>{a04a5c2c-41ae-4a40-9740-33103a04eb1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_OOP의 이해\실습">
+      <UniqueIdentifier>{91a77ba0-eb09-45ac-a07b-ee8a0f913e2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03_OOP의 이해\내용">
+      <UniqueIdentifier>{bf2b4485-7ad9-4b66-aad2-95126f463841}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="01_NormalStruct.cpp">
+      <Filter>소스 파일\01_C++의 구조체\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Chapter 01\Chapter 01\_Form.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="02_FuncInStruct.cpp">
+      <Filter>소스 파일\01_C++의 구조체\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_P01.cpp">
+      <Filter>소스 파일\01_C++의 구조체\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="03_EnumInStruct.cpp">
+      <Filter>소스 파일\01_C++의 구조체\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="04_FuncOutOfStruct.cpp">
+      <Filter>소스 파일\01_C++의 구조체\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="01_Class.cpp">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_Car.cpp">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="03_CarInline.cpp">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="_CarMain.cpp">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClCompile>
+    <ClCompile Include="02_P01.cpp">
+      <Filter>소스 파일\02_Class와 Object\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="02_P02.cpp">
+      <Filter>소스 파일\02_Class와 Object\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="01_FruitSale.cpp">
+      <Filter>소스 파일\03_OOP의 이해\내용</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="02_Car.h">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClInclude>
+    <ClInclude Include="03_CarInline.h">
+      <Filter>소스 파일\02_Class와 Object\내용</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -33,9 +33,6 @@
     <ClCompile Include="_FORM_SCPC.cpp">
       <Filter>소스 파일\Main</Filter>
     </ClCompile>
-    <ClCompile Include="____FORM.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

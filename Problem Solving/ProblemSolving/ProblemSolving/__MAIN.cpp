@@ -30,27 +30,27 @@ typedef long long i64;
 typedef unsigned long long ui64;
 // inline i64 GCD(i64 a, i64 b) { if(b == 0) return a; return GCD(b, a % b); }
 inline int getidx(const vi& ar, int x) { return lower_bound(ALL(ar), x) - ar.begin(); } // 좌표 압축에 사용: 정렬된 ar에서 x의 idx를 찾음
-inline i64 GCD(i64 a, i64 b) { i64 n; if(a < b) swap(a, b); while(b != 0) { n = a % b; a = b; b = n; } return a; }
-inline i64 LCM(i64 a, i64 b) { if(a == 0 || b == 0) return GCD(a, b); return a / GCD(a, b) * b; }
+inline i64 GCD(i64 a, i64 b) { i64 n; if (a < b) swap(a, b); while (b != 0) { n = a % b; a = b; b = n; } return a; }
+inline i64 LCM(i64 a, i64 b) { if (a == 0 || b == 0) return GCD(a, b); return a / GCD(a, b) * b; }
 inline i64 CEIL(i64 n, i64 d) { return n / d + (i64)(n % d != 0); } // 음수일 때 이상하게 작동할 수 있음.
 inline i64 ROUND(i64 n, i64 d) { return n / d + (i64)((n % d) * 2 >= d); }
-const i64 MOD = 1e9+7;
+const i64 MOD = 1e9 + 7;
 inline i64 POW(i64 a, i64 n) {
 	assert(0 <= n);
 	i64 ret;
-	for(ret = 1; n; a = a*a%MOD, n /= 2) { if(n%2) ret = ret*a%MOD; }
+	for (ret = 1; n; a = a * a % MOD, n /= 2) { if (n % 2) ret = ret * a % MOD; }
 	return ret;
 }
 template <class T> ostream& operator<<(ostream& os, vector<T> v) {
 	os << "[";
 	int cnt = 0;
-	for(auto vv : v) { os << vv; if(++cnt < v.size()) os << ","; }
+	for (auto vv : v) { os << vv; if (++cnt < v.size()) os << ","; }
 	return os << "]";
 }
 template <class T> ostream& operator<<(ostream& os, set<T> v) {
 	os << "[";
 	int cnt = 0;
-	for(auto vv : v) { os << vv; if(++cnt < v.size()) os << ","; }
+	for (auto vv : v) { os << vv; if (++cnt < v.size()) os << ","; }
 	return os << "]";
 }
 template <class L, class R> ostream& operator<<(ostream& os, pair<L, R> p) { return os << "(" << p.fi << "," << p.se << ")"; }
@@ -58,73 +58,92 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 1e4+10;
-const i64 INF = 0x7fffffffffffffff;
-i64 n, m, t, ar[MAXN], par[MAXN];
-i64 dis[MAXN];
-vii g[MAXN];
-vi g2[MAXN];
+const int MAXN = 510;
+int n, m, dp[51][MAXN];
+string g[51];
+set<iii> lis;
 void input() {
-	cin >> n >> m >> t;
-	FOR(i, 0, n) cin >> ar[i];
-	while(m--) {
-		int u, v, c; cin >> u >> v >> c; --u, --v;
-		g[u].pb({ c, v });
-		g[v].pb({ c, u });
-	}
+	// ---- !!! INIT GLOBAL VARIABLES !!! ---- //
+	cin >> n >> m;
+	FOR(i, 0, n) cin >> g[i];
 }
 
-i64 ans = 0;
-i64 f(int u) {
-	i64 ret = ar[u];
-	for(int v : g2[u]) {
-		ret += f(v);
-	}
-	if(t < dis[u]) ans = max(ans, (dis[u]-t) * ret);
-	return ret;
-}
-
-int solve() {
-	memset(par, -1, sizeof(par));
-	FOR(i, 0, MAXN) {
-		dis[i] = INF;
-	}
-	priority_queue<pair<i64, int>> q;
-	q.push({ 0, 0 });
-	dis[0] = 0;
-	while(q.size()) {
-		int u = q.top().se;
-		i64 cdis = -q.top().fi;
-		q.pop();
-		if(cdis > dis[u]) continue;
-		for(ii& e : g[u]) {
-			int v = e.se, c = e.fi;
-			if(dis[v] > dis[u] + c) {
-				dis[v] = dis[u] + c;
-				par[v] = u;
-				q.push({ -dis[v], v });
-			} else if(dis[v] == dis[u] + c &&  u < par[v]) {
-				par[v] = u;
+void eraseBomb(int y, int x) {
+	for (int dy : {-1, 0, 1}) {
+		for (int dx : {-1, 0, 1}) {
+			int ny = y + dy, nx = x + dx;
+			if (0 < ny && ny < n - 1 && 0 < nx && nx < m - 1) {
+				auto it = lis.find({ dp[ny][nx],{ ny, nx } });
+				if (it != lis.end()) {
+					dp[ny][nx] = it->first + 1;
+					lis.erase(it);
+					lis.insert({ dp[ny][nx], {ny, nx} });
+				}
 			}
 		}
 	}
-	FOR(i, 1, n) {
-		g2[par[i]].pb(i);
+}
+
+int solve() {
+	lis.clear();
+	memset(dp, 0, sizeof(dp));
+	FOR(i, 1, n - 1) {
+		FOR(j, 1, m - 1) {
+			int cc = 0;
+			for (int dy : { -1, 0, 1 }) {
+				for (int dx : { -1, 0, 1 }) {
+					int ny = i + dy, nx = j + dx;
+					if (g[ny][nx] == '1') {
+						++cc;
+					}
+				}
+			}
+			lis.insert({ -cc, { i, j } });
+			dp[i][j] = -cc;
+		}
 	}
-	f(0);
-	cout << ans << ENDL;
+	int rem = 0;
+	FOR(i, 0, n) FOR(j, 0, m) if (g[i][j] == '1') ++rem;
+	vii ans;
+	while (rem) {
+		iii cur = *lis.begin();
+		lis.erase(lis.begin());
+		int cc = -cur.fi, cy = cur.se.fi, cx = cur.se.se;
+		rem -= cc;
+		ans.pb({ cy, cx });
+		for (int dy : {-1, 0, 1}) {
+			for (int dx : { -1, 0, 1}) {
+				int y = cy + dy, x = cx + dx;
+				if (g[y][x] == '1') {
+					eraseBomb(y, x);
+					g[y][x] = '0';
+				}
+			}
+		}
+	}
+	cout << ans.size() << ENDL;
+	FOR(i, 0, ans.size()) cout << ans[i].fi << ' ' << ans[i].se << ENDL;
 	return 0;
 }
 
 // ................. main .................. //
 void execute() {
-	input(), solve();
+#ifdef LOCAL_BOOKNU
+	auto START_TIME = clock();
+#endif
+	int TTT; cin >> TTT;
+	FOR(ttt, 0, TTT) cout << "Case #" << ttt + 1 << ENDL,
+		input(), solve();
+#ifdef LOCAL_BOOKNU
+	auto END_TIME = clock();
+	cout << ENDL << END_TIME - START_TIME << "ms" << ENDL;
+#endif
 }
 
 int main(void) {
 #ifdef LOCAL_BOOKNU
-	freopen("input.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
+	 	freopen("input.txt", "r", stdin);
+		 freopen("out.txt", "w", stdout);
 #endif
 	cin.tie(0), ios_base::sync_with_stdio(false);
 	execute();

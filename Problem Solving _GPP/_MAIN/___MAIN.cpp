@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
-// #include <ext/pb_ds/assoc_container.hpp>
-// #include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
-// using namespace __gnu_pbds;
-// typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> treeset; // key, val, comp, implements, 노드 불변 규칙
+using namespace __gnu_pbds;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> treeset; // key, val, comp, implements, 노드 불변 규칙
 
 #ifdef LOCAL_BOOKNU
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
@@ -62,13 +62,35 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-i64 n, x, ans;
+const int MAXN = 3e5+10, MAXM = 11;
+i64 n, m, k, ar[MAXN], dp[MAXN][MAXM];
 void input() {
-	cin >> n;
-	FOR(i, 0, n) cin >> x, ans += x;	
+	cin >> n >> m >> k;
+	FOR(i, 1, n+1) cin >> ar[i];
 }
 
 int solve() {
+	if(m == 1) {
+		i64 cur = 0, ans = 0;
+		FOR(i, 1, n+1) {
+			ans = max(ans, cur = max(0ll, cur + ar[i] - k));
+		}
+		cout << ans << ENDL;
+		return 0;
+	}
+	i64 ans = 0;
+	FOR(i, 1, n+1) {
+		FOR(j, 0, m) {
+			if(j == 1) {
+				dp[i][j] = dp[i-1][j-1] + ar[i] - k;
+			} else if(j == 0) {
+				dp[i][j] = max(dp[i-1][m-1] + ar[i], 0ll);
+			} else {
+				dp[i][j] = dp[i-1][j-1] + ar[i];
+			}
+			ans = max(ans, dp[i][j]);
+		}
+	}
 	cout << ans << ENDL;
 	return 0;
 }
@@ -81,7 +103,7 @@ void execute() {
 int main(void) {
 #ifdef LOCAL_BOOKNU
 	freopen("__IO/input.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
+	// freopen("__IO/out.txt", "w", stdout);
 #endif
 	cin.tie(0), ios_base::sync_with_stdio(false);
 	execute();

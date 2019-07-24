@@ -3,7 +3,10 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
 using namespace __gnu_pbds;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> treeset; // key, val, comp, implements, 노드 불변 규칙
+template<class key, class value, class cmp = less<key>>
+using treemap = tree<key, value, less<int>, rb_tree_tag, tree_order_statistics_node_update>; // key, val, comp, implements, 노드 불변 규칙
+template<class key, class cmp = less<key>>
+using treeset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_update>;
 
 #ifdef LOCAL_BOOKNU
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
@@ -69,7 +72,6 @@ void input() {
 
 int solve() {
 	
-	return 0;
 }
 
 // ................. main .................. //
@@ -79,8 +81,8 @@ void execute() {
 
 int main(void) {
 #ifdef LOCAL_BOOKNU
-	freopen("input.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
+	freopen("__IO/input.txt", "r", stdin);
+	// freopen("__IO/out.txt", "w", stdout);
 #endif
 	cin.tie(0), ios_base::sync_with_stdio(false);
 	execute();

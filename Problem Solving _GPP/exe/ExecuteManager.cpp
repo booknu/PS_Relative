@@ -1,11 +1,9 @@
 // Local Define !!!! --> 이 파일을 실행하므로 Local에 선언하고 싶은거 선언
-#define _CRT_SECURE_NO_WARNINGS
-#define LOCAL_BOOKNU
-#include "../_MAIN/___MAIN.cpp"
-
+#include <cstdio>
+#include <iostream>
 int main(void) {
-    // freopen("out.txt", "w", stdout);
-    // freopen("out.txt", "w", stdout);
-	execute();
+	std::cout << "TESTING START" << std::endl;
+    freopen("__IO/input.txt", "r", stdin);
+	while(!std::cin.eof()) system("exe\\Execute.exe");
     return 0;
 }

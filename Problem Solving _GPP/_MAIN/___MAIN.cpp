@@ -3,7 +3,10 @@
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
 using namespace __gnu_pbds;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> treeset; // key, val, comp, implements, 노드 불변 규칙
+template<class key, class value, class cmp = less<key>>
+using treemap = tree<key, value, less<int>, rb_tree_tag, tree_order_statistics_node_update>; // key, val, comp, implements, 노드 불변 규칙
+template<class key, class cmp = less<key>>
+using treeset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_update>;
 
 #ifdef LOCAL_BOOKNU
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
@@ -62,41 +65,64 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 3e5+10, MAXM = 11;
-i64 n, m, k, ar[MAXN], dp[MAXN][MAXM];
+const int MAXN = 12, MAXND = MAXN*MAXN;
+const int dy[6] = { 0, 0, -1, -1, 1, 1 }, dx[6] = { -1, 1, -1, 1, -1, 1 };
+int n, m, ato[MAXND], bto[MAXND], vis[MAXND];
+string ar[MAXN];
+vi g[MAXND];
 void input() {
-	cin >> n >> m >> k;
-	FOR(i, 1, n+1) cin >> ar[i];
+	cin >> n >> m;
+	FOR(i, 0, n) cin >> ar[i];
+}
+
+bool dfs(int u) {
+	if(vis[u]) return 0;
+	vis[u] = 1;
+	for(int v : g[u]) {
+		if(bto[v] == -1 || dfs(bto[v])) {
+			ato[u] = v;
+			bto[v] = u;
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int bmatch() {
+	memset(ato, -1, sizeof(ato));
+	memset(bto, -1, sizeof(bto));
+	int ret = 0;
+	FOR(y, 0, n) FOR(x, 0, m) {
+		if(x%2) {
+			memset(vis, 0, sizeof(vis));
+			if(dfs(y*m+x)) ++ret;
+		}
+	}
+	return ret;
 }
 
 int solve() {
-	if(m == 1) {
-		i64 cur = 0, ans = 0;
-		FOR(i, 1, n+1) {
-			ans = max(ans, cur = max(0ll, cur + ar[i] - k));
-		}
-		cout << ans << ENDL;
-		return 0;
-	}
-	i64 ans = 0;
-	FOR(i, 1, n+1) {
-		FOR(j, 0, m) {
-			if(j == 1) {
-				dp[i][j] = dp[i-1][j-1] + ar[i] - k;
-			} else if(j == 0) {
-				dp[i][j] = max(dp[i-1][m-1] + ar[i], 0ll);
-			} else {
-				dp[i][j] = dp[i-1][j-1] + ar[i];
+	FOR(i, 0, MAXND) g[i].clear();
+	FOR(y, 0, n) FOR(x, 0, m) {
+		if(x%2 && ar[y][x] == '.') {
+			FOR(dir, 0, 6) {
+				int ny = y + dy[dir], nx = x + dx[dir];
+				if(0 <= ny && ny < n && 0 <= nx && nx < m && ar[ny][nx] == '.') {
+					g[y*m+x].pb(ny*m+nx);
+				}
 			}
-			ans = max(ans, dp[i][j]);
 		}
 	}
-	cout << ans << ENDL;
+	int tot = 0;
+	FOR(y, 0, n) FOR(x, 0, m) if(ar[y][x] == '.') ++tot;
+	cout << tot - bmatch() << ENDL;
 	return 0;
 }
 
 // ................. main .................. //
 void execute() {
+	int TT; cin >> TT;
+	while(TT--)
 	input(), solve();
 }
 

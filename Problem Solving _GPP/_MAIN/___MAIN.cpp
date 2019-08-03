@@ -65,64 +65,86 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 12, MAXND = MAXN*MAXN;
-const int dy[6] = { 0, 0, -1, -1, 1, 1 }, dx[6] = { -1, 1, -1, 1, -1, 1 };
-int n, m, ato[MAXND], bto[MAXND], vis[MAXND];
-string ar[MAXN];
-vi g[MAXND];
+const int MAXN = 1e5+10;
+int n, m, qq, ar[MAXN], beg[MAXN], ps[MAXN], cont[MAXN], suf[MAXN];
+i64 cnt[MAXN];
+vi xs; // lis : 겹치지 않는게 최초 등장하는 위치
+
+// PST
+struct node {
+	i64 x;
+	node *l, *r;
+	node(i64 _x = 0, node* l = 0, node* r = 0) : x(_x), l(l), r(r) {  }
+	node* addtree(int u, i64 c, int ns = 0, int ne = MAXN-1) {
+		if(ns <= u && u <= ne) {
+			if(ns == ne) return new node(x + c, 0, 0);
+			int mid = (ns+ne)/2;
+			return new node(x + c, l->addtree(u, c, ns, mid), r->addtree(u, c, mid+1, ne));
+		}
+		return this;
+	}
+	// index 반환
+	i64 nth(i64 k, int ns = 0, int ne = MAXN-1)  {
+		if(ns == ne) {
+			assert(x == k);
+			return ns; // leaf
+		}
+		int mid = (ns+ne)/2;
+		if(l->x >= k) return l->nth(k, ns, mid);
+		else return r->nth(k-l->x, mid+1, ne);
+	}
+} *root[MAXN+1];
+
 void input() {
-	cin >> n >> m;
-	FOR(i, 0, n) cin >> ar[i];
-}
-
-bool dfs(int u) {
-	if(vis[u]) return 0;
-	vis[u] = 1;
-	for(int v : g[u]) {
-		if(bto[v] == -1 || dfs(bto[v])) {
-			ato[u] = v;
-			bto[v] = u;
-			return 1;
-		}
-	}
-	return 0;
-}
-
-int bmatch() {
-	memset(ato, -1, sizeof(ato));
-	memset(bto, -1, sizeof(bto));
-	int ret = 0;
-	FOR(y, 0, n) FOR(x, 0, m) {
-		if(x%2) {
-			memset(vis, 0, sizeof(vis));
-			if(dfs(y*m+x)) ++ret;
-		}
-	}
-	return ret;
+	cin >> n >> m >> qq;
+	xs.resize(n);
+	FOR(i, 0, n) cin >> ar[i], xs[i] = ar[i];
+	sort(ALL(xs));
+	UNIQUE(xs);
+	FOR(i, 0, n) ar[i] = getidx(xs, ar[i]);
 }
 
 int solve() {
-	FOR(i, 0, MAXND) g[i].clear();
-	FOR(y, 0, n) FOR(x, 0, m) {
-		if(x%2 && ar[y][x] == '.') {
-			FOR(dir, 0, 6) {
-				int ny = y + dy[dir], nx = x + dx[dir];
-				if(0 <= ny && ny < n && 0 <= nx && nx < m && ar[ny][nx] == '.') {
-					g[y*m+x].pb(ny*m+nx);
-				}
-			}
+	memset(beg, -1, sizeof(beg));
+	m = xs.size();
+	root[n] = new node();
+	root[0] = root[n]->l = root[n]->r = root[n];
+	FOR(i, 0, n) ++suf[ar[i]];
+	FOR(i, 0, n) {
+		if(i) ps[i] = ps[i-1]; // 겹치지 않는 개수
+		if(i) root[i] = root[i-1];
+		if(beg[ar[i]] == -1) beg[ar[i]] = i;
+		// 빠진게 suf에서 완전히 빠지며, cont에 포함되지 않았으면
+		if((--suf[ar[i]]) == 0 && !cont[ar[i]]) {
+			cont[ar[i]] = 1;
+			++ps[i];
+			root[i] = root[i]->addtree(ar[i], 1);
+		} 
+	}
+	FOR(i, 0, m) {
+		cnt[i] = ps[beg[i]];
+	}
+	FOR(i, 1, m) {
+		cnt[i] += cnt[i-1];
+	}
+	while(qq--) {
+		i64 x; cin >> x;
+		auto it = lower_bound(cnt, cnt + m, x);
+		if(it == cnt+m) { // 불가능한 경우
+			cout << -1 << ' ' << -1 << ENDL;
+			continue;
+		} else {
+			i64 idx = it - cnt;
+			i64 cc = x - (idx ? cnt[idx-1] : 0ll) - 1ll;
+			int ed = root[beg[idx]]->nth(cc+1);
+			cout << xs[idx] << ' ' << xs[ed] << ENDL;
 		}
 	}
-	int tot = 0;
-	FOR(y, 0, n) FOR(x, 0, m) if(ar[y][x] == '.') ++tot;
-	cout << tot - bmatch() << ENDL;
 	return 0;
 }
 
 // ................. main .................. //
 void execute() {
-	int TT; cin >> TT;
-	while(TT--)
 	input(), solve();
 }
 

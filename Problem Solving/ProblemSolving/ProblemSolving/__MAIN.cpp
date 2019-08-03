@@ -58,14 +58,18 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-
+const int MAXN = 1e5;
+int ar[MAXN];
 void input() {
-	vi x;
-	x[1] = 1;
+	cout << MAXN << ' ' << 2 << ' ' << 2; cout << ENDL;
 }
 
 int solve() {
-
+	FOR(i, 0, MAXN/2) {
+		cout << 1 << ' ';
+	}
+	FOR(i, 0, MAXN/2) cout << 2 << ' ';
+	cout << ENDL;
 	return 0;
 }
 
@@ -77,7 +81,7 @@ void execute() {
 int main(void) {
 #ifdef LOCAL_BOOKNU
 	freopen("input.txt", "r", stdin);
-	// freopen("out.txt", "w", stdout);
+	 freopen("out.txt", "w", stdout);
 #endif
 	cin.tie(0), ios_base::sync_with_stdio(false);
 	execute();

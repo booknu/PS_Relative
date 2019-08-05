@@ -4,7 +4,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 template<class key, class value, class cmp = less<key>>
-using treemap = tree<key, value, less<int>, rb_tree_tag, tree_order_statistics_node_update>; // key, val, comp, implements, ë…¸ë“œ ë¶ˆë³€ ê·œì¹™
+using treemap = tree<key, value, less<int>, rb_tree_tag, tree_order_statistics_node_update>; // key, val, comp, implements, ³ëµå ºÒº¯ ±ÔÄ¢
 template<class key, class cmp = less<key>>
 using treeset = tree<key, null_type, cmp, rb_tree_tag, tree_order_statistics_node_update>;
 
@@ -36,10 +36,10 @@ typedef vector<vii> vvii;
 typedef long long i64;
 typedef unsigned long long ui64;
 // inline i64 GCD(i64 a, i64 b) { if(b == 0) return a; return GCD(b, a % b); }
-inline int getidx(const vi& ar, int x) { return lower_bound(ALL(ar), x) - ar.begin(); } // ì¢Œí‘œ ì••ì¶•ì— ì‚¬ìš©: ì •ë ¬ëœ arì—ì„œ xì˜ idxë¥¼ ì°¾ìŒ
+inline int getidx(const vi& ar, int x) { return lower_bound(ALL(ar), x) - ar.begin(); } // ÁÂÇ¥ ¾ĞÃà¿¡ »ç¿ë: Á¤·ÄµÈ ar¿¡¼­ xÀÇ idx¸¦ Ã£À½
 inline i64 GCD(i64 a, i64 b) { i64 n; if(a < b) swap(a, b); while(b != 0) { n = a % b; a = b; b = n; } return a; }
 inline i64 LCM(i64 a, i64 b) { if(a == 0 || b == 0) return GCD(a, b); return a / GCD(a, b) * b; }
-inline i64 CEIL(i64 n, i64 d) { return n / d + (i64)(n % d != 0); } // ìŒìˆ˜ì¼ ë•Œ ì´ìƒí•˜ê²Œ ì‘ë™í•  ìˆ˜ ìˆìŒ.
+inline i64 CEIL(i64 n, i64 d) { return n / d + (i64)(n % d != 0); } // À½¼öÀÏ ¶§ ÀÌ»óÇÏ°Ô ÀÛµ¿ÇÒ ¼ö ÀÖÀ½.
 inline i64 ROUND(i64 n, i64 d) { return n / d + (i64)((n % d) * 2 >= d); }
 const i64 MOD = 1e9+7;
 inline i64 POW(i64 a, i64 n) {
@@ -54,7 +54,7 @@ template <class T> ostream& operator<<(ostream& os, vector<T> v) {
 	for(auto vv : v) { os << vv; if(++cnt < v.size()) os << ","; }
 	return os << "]";
 }
-template <class T> ostream& operator<<(ostream& os, set<T> v) {
+template <class T> ostream& operator<<(ostream& os, multiset<T> v) {
 	os << "[";
 	int cnt = 0;
 	for(auto vv : v) { os << vv; if(++cnt < v.size()) os << ","; }
@@ -65,13 +65,31 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-
+const int MAXN = 1e5+10;
+int n;
+ii seg[MAXN];
 void input() {
-	
+	cin >> n;
+	FOR(i, 0, n) cin >> seg[i].fi >> seg[i].se;
 }
 
+// https://www.acmicpc.net/problem/17364
+// ÀÀ¿ëÇÏ·Á¸é multiset + fenwick »ç¿ëÇØ¼­ ¼¼µµ µÉµí (fenwick¸¸ »ç¿ëÇØµµ µÇ³ª?)
 int solve() {
-	
+	// end ¼øÀ¸·Î ¼øÈ¸
+	sort(seg, seg + n, [&](ii& u, ii& v) { return u.se < v.se; });
+	multiset<int> s; // °¡Àå ÃÖ±Ù¿¡ ³¡³­ ±¸°£µé ÀúÀå
+	FOR(i, 0, n) {
+		// ÇöÀç ±¸°£Àº lÀ» Æ÷ÇÔÇÑ set ¾ÈÀÇ ±× ÈÄÀÇ ¸ğµç ±¸°£°ú °ãÄ¡´Â °Í!!
+		// Áï, set[l..]ÀÇ °³¼ö°¡ °ğ ÇöÀç ±¸°£°ú ¾Õ ±¸°£µéÀÌ °ãÄ¡´Â ¼ö!!
+		// ´Ü, ³¡ Á¡ÀÌ °°Àº ±¸°£µéÀÌ ÀÖÀ» ¶§´Â Á¶½É!! (¼øÈ¸ ¼ø¼­¿¡ µû¶ó¼­ °°Àº ³¡Á¡ÀÌ¶óµµ °ãÄ¡´Â ¼ö°¡ ´Ù¸£°Ô counting)
+		auto l = s.lower_bound(seg[i].fi);
+		// ÀÌ°ÍÀº Áï, ÇöÀç ±¸°£ÀÌ --l°ú´Â °ãÄ¡Áö ¾Ê´Âµ¥, ¼øÈ¸°¡ Á¤¹æÇâÀÌ¹Ç·Î ÃÖ´ëÇÑ ¿À¸¥ÂÊ¿¡¼­ ³¡³ª´Â ±¸°£À» ÀúÀåÇÏ´Â°Ô ÀÌµæÀÌ¹Ç·Î ÀÌ°É·Î ¹Ù²ãÁØ °Í!
+		// °á±¹ ÃÑ °ãÄ¡´Â °³¼ö´Â º¯ÇÏÁö ¾ÊÀ¸³ª, ³¡ Á¡°ú ´õ °¡±î¿î ±¸°£°ú °ãÄ¡µµ·Ï ¼±ÅÃÇÒ ¼ö ÀÖÀ½!!
+		if(l != s.begin()) s.erase(--l);
+		s.insert(seg[i].se);
+		debug(s);
+	}
 	return 0;
 }
 

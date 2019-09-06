@@ -38,6 +38,19 @@ inline i64 POW(i64 a, i64 n) {
 
 // ....................................................... //
 
+// regex 사용한 split
+vector<string> split(string& target, string regex) {
+	vector<string> ret;
+	std::regex rgx(regex);
+	std::sregex_token_iterator iter(target.begin(),
+		target.end(),
+		rgx,
+		-1);
+	std::sregex_token_iterator end;
+	for( ; iter != end; ++iter) ret.pb(*iter);
+	return ret;
+}
+
 // 공백 단위로 split
 void space_split(void) {
 	string s = "target TARGET ttt";

@@ -65,13 +65,39 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-
+// https://www.acmicpc.net/problem/15956
+string s;
 void input() {
-	
+	cin >> s;
+}
+
+vector<string> split(string& target, string regex) {
+	vector<string> ret;
+	std::regex rgx(regex);
+	std::sregex_token_iterator iter(target.begin(),
+		target.end(),
+		rgx,
+		-1);
+	std::sregex_token_iterator end;
+	for( ; iter != end; ++iter) ret.pb(*iter);
+	return ret;
+}
+
+tuple<string, string, bool> split_term(string& term) {
+	for(auto it = term.begin(); it != term.end(); ++it) {
+		if(*it == '!' || *it == '=') {
+			return { string(term.begin(), it), string(it+2, term.end()), *it == '=' };
+		}
+	}
+	assert(false);
 }
 
 int solve() {
-	
+	vector<string> x = split(s, "&&");
+	for(string& xx : x) {
+		auto [fi, se, typ] = split_term(xx);
+		debug(fi, se, typ);
+	}
 	return 0;
 }
 

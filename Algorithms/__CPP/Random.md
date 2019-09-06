@@ -37,7 +37,7 @@
 -  [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister) based on prime $2^{19937}-1$
 
 - ```cpp
-  mt19937 rng(chrono::steady_clock::not().time_since_epoch().count());
+  mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
   shuffle(ALL(ar), rng);
   ```
 

@@ -87,9 +87,9 @@ void debug_out(Head H, Tail... T) {
 // dependency: GCD(i64 a, i64 b)
 struct frac {
 	i64 a, b;
-	frac(i64 a=0, i64 b=1) : a(a), b(b) { relax(); }
+	frac(i64 _a=0, i64 _b=1) : a(_a), b(_b) { if(a == 0 && b == 0) b = 1; assert(b != 0); relax(); }
 	// 필수 fraction끼리의 연산
-	void relax() { i64 g = GCD(abs(a), b); a /= g, b /= g; }
+	void relax() { i64 g = GCD(abs(a), abs(b)); a /= g, b /= g; }
 	frac operator + (const frac &ot) const { return { a * ot.b + ot.a * b, b * ot.b }; }
 	frac operator - (const frac &ot) const { return { a * ot.b - ot.a * b, b * ot.b }; }
 	frac operator * (const frac &ot) const { return { a * ot.a, b * ot.b }; }

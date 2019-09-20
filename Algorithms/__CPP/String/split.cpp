@@ -52,11 +52,10 @@ vector<string> split(string& target, string regex) {
 }
 
 // 공백 단위로 split
-void space_split(void) {
-	string s = "target TARGET ttt";
+vector<string> space_split(string& s) {
 	istringstream iss(s);
-	vector<string> r(istream_iterator<string>{iss}, istream_iterator<string>());
-	cout << r.size() << ENDL;
+	vector<string> ret(istream_iterator<string>{iss}, istream_iterator<string>());
+	return ret;
 }
 
 // 애초에 입력 받을 때 split 해서 받기

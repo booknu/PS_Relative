@@ -65,39 +65,95 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-// https://www.acmicpc.net/problem/15956
-string s;
+const int MAXN = 1e4+10;
+const char clis[2] = { 'R', 'B' };
+struct tarjan {
+	int n, ncnt, scnt;
+	vi scc, dis;
+	vvi& g;
+	stack<int> sta;
+	tarjan(vvi& _g) : g(_g), n(_g.size()), ncnt(0), scnt(0), scc(n, -1), dis(n, -1) { }
+	int f(int u) {
+		int ret = dis[u] = ncnt++;
+		sta.push(u);
+		for(int v : g[u]) {
+			if(dis[v] == -1) ret = min(ret, f(v));
+			else if(scc[v] == -1) ret = min(ret, dis[v]);
+		}
+		if(ret == dis[u]) {
+			while(1) {
+				int t = sta.top(); sta.pop();
+				scc[t] = scnt;
+				if(t == u) break;
+			}
+			++scnt;
+		}
+		return ret;
+	}
+	vi& getScc() {
+		FOR(i, 0, n) if(dis[i] == -1) f(i);
+		dis.clear();
+		return scc;
+	}
+};
+
+int n, m, ar[MAXN], ord[MAXN], ans[MAXN];
+vi scs[MAXN];
+vvi g;
+vii pic[MAXN];
 void input() {
-	cin >> s;
-}
-
-vector<string> split(string& target, string regex) {
-	vector<string> ret;
-	std::regex rgx(regex);
-	std::sregex_token_iterator iter(target.begin(),
-		target.end(),
-		rgx,
-		-1);
-	std::sregex_token_iterator end;
-	for( ; iter != end; ++iter) ret.pb(*iter);
-	return ret;
-}
-
-tuple<string, string, bool> split_term(string& term) {
-	for(auto it = term.begin(); it != term.end(); ++it) {
-		if(*it == '!' || *it == '=') {
-			return { string(term.begin(), it), string(it+2, term.end()), *it == '=' };
+	cin >> n >> m;
+	FOR(i, 0, m) {
+		FOR(k, 0, 3) {
+			int u; char c; cin >> u >> c; --u;
+			FOR(j, 0, 2) {
+				if(c == clis[j]) pic[i].pb({ u, j });
+			}
 		}
 	}
-	assert(false);
+	g.assign(2*n, vi());
+}
+
+// u
+int nd(int u, int nott) {
+	return u + nott * n;
+}
+
+// ~u
+int opnd(int u) {
+	return (u + n) % (2*n);
+}
+
+// u || v
+void addedg(int u, int v) {
+	g[opnd(u)].pb(v);
+	g[opnd(v)].pb(u);
 }
 
 int solve() {
-	vector<string> x = split(s, "&&");
-	for(string& xx : x) {
-		auto [fi, se, typ] = split_term(xx);
-		debug(fi, se, typ);
+	// 한 사람에 대한 식 추가
+	FOR(i, 0, m) {
+		FOR(j, 0, 3) {
+			addedg(nd(pic[i][j].fi, pic[i][j].se), nd(pic[i][(j+1)%3].fi, pic[i][(j+1)%3].se));
+		}
 	}
+	// SCC
+	tarjan tj(g);
+	vi scc = tj.getScc();
+	// 같은 scc에 ~x, x 같이 들어있는지 확인
+	FOR(u, 0, n) if(scc[u] == scc[u+n]) {
+		cout << -1 << ENDL;
+		return 0;
+	}
+	// 변수 대입
+	FOR(i, 0, 2*n) ord[i] = i;
+	sort(ord, ord + 2*n, [&](int u, int v) { return scc[u] > scc[v]; });
+	memset(ans, -1, sizeof(ans));
+	FOR(i, 0, 2*n) {
+		int u = ord[i];
+		if(ans[u%n] == -1) ans[u%n] = !(u<n);
+	}
+	FOR(i, 0, n) cout << (clis[!ans[i]]); cout << ENDL;
 	return 0;
 }
 

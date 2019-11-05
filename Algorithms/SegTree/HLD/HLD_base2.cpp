@@ -65,29 +65,128 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 1e3+10;
-i64 n, m, n2, m2, t, ar[MAXN], br[MAXN], cr[MAXN*MAXN], dr[MAXN*MAXN];
+const int MAXN = 1e5+10, LOGN = 18;
+struct fenwick {
+	int n;
+	vector<i64> t;
+	void init(int _n) { n = _n; t.assign(n+1, 0); }
+	void add(int u, i64 x) { for(++u; u <= n; u += (u&-u)) t[u] += x; }
+	i64 sum(int u) { i64 ret = 0; for(++u; u > 0; u -= (u&-u)) ret += t[u]; return ret; }
+	i64 sum(int s, int e) { return sum(e) - sum(s-1); }
+};
+
+int n, hn, qq, par[MAXN][LOGN], dep[MAXN], ssz[MAXN], hidx[MAXN];
+vii g[MAXN];
+vi hvy[MAXN];
+vector<fenwick> segs;
 void input() {
-	cin >> t >> n;
-	FOR(i, 0, n) cin >> ar[i];
-	cin >> m;
-	FOR(i, 0, m) cin >> br[i];
+	cin >> n;
+	FOR(i, 0, n-1) {
+		int u, v, c; cin >> u >> v >> c; --u, --v;
+		g[u].pb({ v, c });
+		g[v].pb({ u, c });
+	}	
+	cin >> qq;
+}
+
+void dfs_init(int u) {
+	ssz[u] = 1;
+	FOR(j, 1, LOGN) par[u][j] = par[par[u][j-1]][j-1];
+	for(auto [v, c] : g[u]) {
+		if(par[u][0] == v) continue;
+		par[v][0] = u;
+		dep[v] = dep[u] + 1;
+		dfs_init(v);
+		ssz[u] += ssz[v];
+	}
+}
+
+int lca(int u, int v) {
+	if(dep[u] < dep[v]) swap(u, v);
+	int dif = dep[u] - dep[v];
+	FOR(j, 0, LOGN) if(dif & (1<<j)) u = par[u][j];
+	if(u != v) {
+		RFOR(j, LOGN-1, 0) if(par[u][j] != par[v][j]) u = par[u][j], v = par[v][j];
+		u = par[u][0];
+	}
+	return u;
+}
+
+void hld(int rt) {
+	hidx[rt] = -1;
+	queue<int> q;
+	q.push(rt);
+	while(q.size()) {
+		int u = q.front(); q.pop();
+		for(auto [v, c] : g[u]) if(par[v][0] == u) q.push(v);
+		int p = par[u][0];
+		if(u != rt) {
+			if(p != rt && ssz[u]*2 >= ssz[p]) {
+				hidx[u] = hidx[p];
+				hvy[hidx[u]].pb(u);
+			} else {
+				hidx[u] = hn++;
+				hvy[hidx[u]].pb(p);
+				hvy[hidx[u]].pb(u);
+			}
+		}
+	}
+}
+
+void init_segs() {
+	segs.assign(hn, fenwick());
+	FOR(i, 0, hn) {
+		segs[i].init(hvy[i].size()-1);
+	}
+}
+
+int eidx(int v) {
+	return dep[par[v][0]] - dep[hvy[hidx[v]][0]];
+}
+
+i64 query_to(int u, int v) {
+	if(u == v) return 0;
+	if(hidx[u] == hidx[v]) return segs[hidx[v]].sum(eidx(u)+1, eidx(v));
+	else return query_to(u, hvy[hidx[v]][0]) + segs[hidx[v]].sum(0, eidx(v));
+}
+
+i64 query(int u, int v) {
+	int t = lca(u, v);
+	return query_to(t, u) + query_to(t, v);
+}
+
+i64 kth(int u, int v, int k) {
+	int t = lca(u, v);
+	if(k < dep[u]-dep[t]+1) {
+		RFOR(i, LOGN-1, 0) if((1<<i) & k) u = par[u][i];
+		return u;
+	} else {
+		k -= dep[u]-dep[t];
+		k = (dep[v]-dep[t]) - k;
+		RFOR(i, LOGN-1, 0) if((1<<i) & k) v = par[v][i];
+		return v;
+	}
 }
 
 int solve() {
-	FOR(i, 0, n) {
-		i64 sum = 0;
-		FOR(j, i, n) cr[n2++] = sum += ar[j];
+	dfs_init(0);
+	hld(0);
+	init_segs();
+	FOR(u, 0, n) {
+		for(auto [v, c] : g[u]) {
+			if(par[u][0] == v) continue;
+			segs[hidx[v]].add(eidx(v), c);
+		}
 	}
-	FOR(i, 0, m) {
-		i64 sum = 0;
-		FOR(j, i, m) dr[m2++] = sum += br[j];
+	while(qq--) {
+		int t, u, v; cin >> t >> u >> v; --u, --v;
+		if(t == 1) {
+			cout << query(u, v) << ENDL;
+		} else {
+			int k; cin >> k; --k;
+			cout << kth(u, v, k)+1 << ENDL;
+		}
 	}
-	sort(cr, cr + n2);
-	sort(dr, dr + m2);
-	i64 ans = 0;
-	FOR(i, 0, n2) ans += upper_bound(dr, dr + m2, t-cr[i]) - lower_bound(dr, dr + m2, t-cr[i]);
-	cout << ans << ENDL;
 	return 0;
 }
 

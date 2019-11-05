@@ -68,6 +68,7 @@ template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { c
 /*
 ** Edge Costed **
 1. consider edge u->v as v
+2. hidx[root] = -1
 */
 struct segtree {
 	int n;
@@ -88,7 +89,7 @@ struct segtree {
 
 // (qq, cost, edg) is custom variables
 const int MAXN = 1e5+10, LOGN = 18;
-int n, qq, hn, cost[MAXN], par[MAXN], lpar[MAXN][LOGN], ssz[MAXN], dep[MAXN], hidx[MAXN];
+int n, qq, hn, cost[MAXN], par[MAXN][LOGN], ssz[MAXN], dep[MAXN], hidx[MAXN];
 ii edg[MAXN];
 vi g[MAXN], hvy[MAXN];
 vector<segtree> segs;
@@ -105,13 +106,12 @@ void input() {
 }
 
 // ******** INIT (par, lpar, ssz, dep), Basic Tree Algorithms ******** //
-void dfs_init(int u) {
+void dfs_init(int u) {  // initialize dfs info
 	ssz[u] = 1;
-	for(int j = 1; j < LOGN; ++j) lpar[u][j] = lpar[lpar[u][j-1]][j-1];
+	FOR(j, 1, LOGN) par[u][j] = par[par[u][j-1]][j-1];
 	for(int v : g[u]) {
-		if(par[u] == v) continue;
-		par[v] = u;
-		lpar[v][0] = u;
+		if(par[u][0] == v) continue;
+		par[v][0] = u;
 		dep[v] = dep[u] + 1;
 		dfs_init(v);
 		ssz[u] += ssz[v];
@@ -121,25 +121,25 @@ void dfs_init(int u) {
 int lca(int u, int v) { // consider par[root] = root
 	if(dep[u] < dep[v]) swap(u, v);
 	int dif = dep[u] - dep[v];
-	FOR(j, 0, LOGN) if(dif & (1<<j)) u = lpar[u][j];
+	FOR(j, 0, LOGN) if(dif & (1<<j)) u = par[u][j];
 	if(u != v) {
-		RFOR(j, LOGN-1, 0) if(lpar[u][j] != lpar[v][j]) u = lpar[u][j], v = lpar[v][j];
-		u = par[u];
+		RFOR(j, LOGN-1, 0) if(par[u][j] != par[v][j]) u = par[u][j], v = par[v][j];
+		u = par[u][0];
 	}
 	return u;
 }
 
 // ******** HLD Relative ******** // 
 void hld(int rt) { // decomposite tree
-	memset(hidx, -1, sizeof(hidx));
+	hidx[rt] = -1;
 	queue<int> q;
 	q.push(rt);
 	while(q.size()) {
 		int u = q.front(); q.pop();
-		for(int v : g[u]) if(par[v] == u) q.push(v);
+		for(int v : g[u]) if(par[v][0] == u) q.push(v);
 		if(u != rt) {
-			int p = par[u];
-			if(ssz[u]*2 >= ssz[p] && p != rt) { // extend h-path (only if h-path)
+			int p = par[u][0];
+			if(p != rt && ssz[u]*2 >= ssz[p]) { // extend h-path (only if h-path)
 				hidx[u] = hidx[p];
 				hvy[hidx[u]].pb(u);
 			} else { // create h-path (l-path or root-h-path)
@@ -153,19 +153,16 @@ void hld(int rt) { // decomposite tree
 
 void init_segs() {
 	segs.assign(hn, segtree());
-	FOR(i, 0, hn) {
-		int hsz = hvy[i].size();
-		segs[i].init(hsz-1); // m vertices: m-1 edges
-	}
+	FOR(i, 0, hn) segs[i].init(hvy[i].size()-1); // m vertices: m-1 edges
 }
 
 int eidx(int v) { // get u->v edge index in h-path
-	return dep[par[v]] - dep[hvy[hidx[v]][0]];
+	return dep[par[v][0]] - dep[hvy[hidx[v]][0]];
 }
 
 void update(int u, int v, int x) { // u->v edge update
-	if(par[v] == u) swap(u, v);
-	assert(par[v] == u);
+	if(par[u][0] == v) swap(u, v);
+	assert(par[v][0] == u);
 	segs[hidx[v]].update(eidx(v), x);
 }
 
@@ -186,7 +183,7 @@ int solve() {
 	init_segs();
 	FOR(i, 0, n-1) {
 		auto [u, v] = edg[i];
-		if(par[u] == v) swap(u, v);
+		if(par[u][0] == v) swap(u, v);
 		segs[hidx[v]].update(eidx(v), cost[i]);
 	}
 	while(qq--) {
@@ -194,7 +191,7 @@ int solve() {
 		if(t == 1) {
 			int i, c; cin >> i >> c; --i;
 			auto [u, v] = edg[i];
-			if(par[u] == v) swap(u, v);
+			if(par[u][0] == v) swap(u, v);
 			segs[hidx[v]].update(eidx(v), c);
 		} else {
 			int u, v; cin >> u >> v; --u, --v;

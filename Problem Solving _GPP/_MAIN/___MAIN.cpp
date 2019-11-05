@@ -65,29 +65,13 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 1e3+10;
-i64 n, m, n2, m2, t, ar[MAXN], br[MAXN], cr[MAXN*MAXN], dr[MAXN*MAXN];
+
 void input() {
-	cin >> t >> n;
-	FOR(i, 0, n) cin >> ar[i];
-	cin >> m;
-	FOR(i, 0, m) cin >> br[i];
+	
 }
 
 int solve() {
-	FOR(i, 0, n) {
-		i64 sum = 0;
-		FOR(j, i, n) cr[n2++] = sum += ar[j];
-	}
-	FOR(i, 0, m) {
-		i64 sum = 0;
-		FOR(j, i, m) dr[m2++] = sum += br[j];
-	}
-	sort(cr, cr + n2);
-	sort(dr, dr + m2);
-	i64 ans = 0;
-	FOR(i, 0, n2) ans += upper_bound(dr, dr + m2, t-cr[i]) - lower_bound(dr, dr + m2, t-cr[i]);
-	cout << ans << ENDL;
+	
 	return 0;
 }
 

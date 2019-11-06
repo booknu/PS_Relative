@@ -64,5 +64,3 @@ struct SegTree{
 		return sum(s, e, node*2, ns, mid) + sum(s, e, node*2+1, mid, ne);
 	}
 };
-
-[출처] 레이지 프로퍼게이션(Lazy Propagation) (수정: 2019-07-06)|작성자 라이

@@ -8,40 +8,62 @@
 		- sort nodes topologically, iterate nodes with assigning False to var if var is unassigned
 			- !X node: X = True, X node: X = False
 */
-const int MAXN = 1e4+10;
-int n, m, res[MAXN];
-vvi g;
-
-int nd(int u, int nott) { // u
-	return u + nott * n;
-}
-
-int opnd(int u) { // ~u
-	return (u + n) % (2*n);
-}
-
-void addedg(int u, int v) { // u || v
-	g[opnd(u)].pb(v);
-	g[opnd(v)].pb(u);
-}
-
-int solve() {
-	// add (X || Y) Clauses
-	FOR(i, 0, m) addedge(x[i], y[i]);
-	// SCC
-	tarjan tj(g); vi scc = tj.getScc();
-	// X, !X in same SCC
-	FOR(u, 0, n) if(scc[u] == scc[u+n]) {
-		cout << -1 << ENDL;
-		return 0;
+struct sat2 {
+	struct tarjan {
+		int n, ncnt, scnt;
+		vi scc, dis;
+		vvi g;
+		stack<int> sta;
+		tarjan(int n) : n(n), g(n, vi()) { } // n: number of variables (NOT NODES!)
+		void addedge(int u, int v) { g[u].pb(v); } // directed graph
+		int f(int u) {
+			int ret = dis[u] = ncnt++;
+			sta.push(u);
+			for(int v : g[u]) {
+				if(dis[v] == -1) ret = min(ret, f(v));
+				else if(scc[v] == -1) ret = min(ret, dis[v]);
+			}
+			if(ret == dis[u]) {
+				while(1) {
+					int t = sta.top(); sta.pop();
+					scc[t] = scnt;
+					if(t == u) break;
+				}
+				++scnt;
+			}
+			return ret;
+		}
+		vi& get_scc() {
+			ncnt = scnt = 0;
+			scc = dis = vi(n, -1);
+			sta = stack<int>();
+			FOR(i, 0, n) if(dis[i] == -1) f(i);
+			dis.clear();
+			return scc;
+		}
+	};
+	int n;
+	vi res;
+	tarjan tj;
+	sat2(int n) : n(n), tj(2*n) { }
+	int nd(int u, int neg) { return u + neg*n; } // var u's node
+	int neg(int u) { return (u+n)%(2*n); } // ~u
+	void addedge(int u, int nu, int v, int nv) { // add (X || Y) clauses
+		u = nd(u, nu), v = nd(v, nv);
+		tj.addedge(neg(u), v);
+		tj.addedge(neg(v), u); 
+	} 
+	vi& solve() { // return solved vars, if no solution return vi()
+		vi& scc = tj.get_scc();
+		FOR(u, 0, n) if(scc[u] == scc[u+n]) return res;
+		res.assign(n, -1);
+		vi ord(2*n);
+		FOR(i, 0, 2*n) ord[i] = i;
+		sort(ALL(ord), [&](int u, int v) { return scc[u] > scc[v]; });
+		FOR(i, 0, 2*n) {
+			int u = ord[i];
+			if(res[u%n] == -1) res[u%n] = !(u<n);
+		}
+		return res;
 	}
-	// find solution
-	FOR(i, 0, 2*n) ord[i] = i;
-	sort(ord, ord + 2*n, [&](int u, int v) { return scc[u] > scc[v]; });
-	memset(res, -1, sizeof(res));
-	FOR(i, 0, 2*n) {
-		int u = ord[i];
-		if(res[u%n] == -1) res[u%n] = !(u<n);
-	}
-	return 0;
-}
+};

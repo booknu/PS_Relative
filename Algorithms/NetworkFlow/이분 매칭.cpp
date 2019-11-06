@@ -1,6 +1,5 @@
 const int MAXN = 5e2+10;
 int vis[MAXN], ato[MAXN], bto[MAXN];
-
 bool dfs(int u) {
 	if(vis[u]) return 0;
 	vis[u] = 1;
@@ -13,7 +12,6 @@ bool dfs(int u) {
 	}
 	return 0;
 }
-
 int bimatch() {
 	memset(ato, -1, sizeof(ato)), memset(bto, -1, sizeof(bto));
 	int ret = 0;

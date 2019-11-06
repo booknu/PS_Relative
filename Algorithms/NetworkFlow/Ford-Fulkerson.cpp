@@ -1,21 +1,19 @@
-// **** 주의 **** //
-// 모든 정점 번호는 0보다 커야한다. (par[S] = 0 으로 사용하기 때문.)
+// Caution: All vertices' idx > 0 (par[S] = 0)
 const int MAXND = 500, S = 1, T = 2, INF = 0x3fffffff;
 struct nflow {
 	struct edge {
-		edge* rev; // 외부에서 초기화
-		int v, c, f; // 모두 초기화 필요
+		edge* rev; 
+		int v, c, f; // need initialized
 		edge(int v, int c) : v(v), c(c), f(0) { }
-		int res() { return c-f; } // residual capacity
+		int res() { return c-f; }
 		int flow(int x) { f += x, rev->f -= x; }
 	};
-	vector<edge*> g[MAXND]; // 객체 생성 시 초기화 필요
-	int par[MAXND]; // flow마다 초기화
-	edge* pedg[MAXND]; // 초기화 불필요
-					  // 없어도 되나?
-					  // nflow() {
-					  // 	FOR(i, 0, MAXN) g[i] = vector<edge*>();
-					  // }
+	vector<edge*> g[MAXND];
+	int par[MAXND];
+	edge* pedg[MAXND];
+	nflow() {
+		FOR(i, 0, MAXN) g[i] = vector<edge*>();
+	}
 	void addedge(int u, int v, int c) { 
 		edge *uv = new edge(v, c), *vu = new edge(u, 0);
 		uv->rev = vu, vu->rev = uv;

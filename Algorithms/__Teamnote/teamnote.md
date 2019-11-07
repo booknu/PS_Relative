@@ -740,7 +740,7 @@ ostream& operator<<(ostream& os, const mat& v) { for(auto vv : (vector<vector<EL
 ## Miller-Rabin Test
 
 ```cpp
-namespace miller_rabin{
+namespace miller_rabin{ // O(logP)
 	i64 mul(i64 x, i64 y, i64 mod){ return (__int128) x * y % mod; }
 	i64 ipow(i64 x, i64 y, i64 p){
 		i64 ret = 1, piv = x % p;
@@ -1365,6 +1365,12 @@ struct hld_edge {
 
 # Miscellaneous
 
+## Preset
+
+```cpp
+
+```
+
 ## 3D-Partial Sum
 
 ```cpp
@@ -1396,11 +1402,20 @@ void init() {
 }
 ```
 
-## DP Optimizations
+## Knuth's Optimization
 
-### Knuth's Optimization
+1. DP Equation Form
+   - $D[i][j] = \min_{i < k < j}(D[i][k] + D[k][j]) + C[i][j]$
+2. Quadrangle Inequality
+   - $C[a][c] + C[b][d] \leq C[a][d] + C[b][c], a \leq b \leq c \leq d$
+3. Monotonicity
+   - $C[b][c] \leq C[a][d], a \leq b \leq c \leq d$
 
-### CHT
+Define $A[i][j] = k \text{ for } D[i][j] \text{ becomes minimum}$
+
+If condition 2, 3 is satisfied, then
+
+$A[i][j-1] \leq A[i][j] \leq A[i+1][j]$
 
 ## Bit Tricks
 
@@ -1422,13 +1437,142 @@ i64 next_perm(i64 x) {
 
 ## Fast IO
 
-## Scanf Input Format
+```cpp
+class FastIO {
+	int fd, bufsz;
+	char *buf, *cur, *end;
+public:
+	FastIO(int _fd = 0, int _bufsz = 1 << 20) : fd(_fd), bufsz(_bufsz) {
+		buf = cur = end = new char[bufsz];
+	}
+	~FastIO() { delete[] buf; }
+	bool readbuf() {
+		cur = buf;
+		end = buf + bufsz;
+		while(true) {
+			size_t res = fread(cur, sizeof(char), end - cur, stdin);
+			if(res == 0) break;
+			cur += res;
+		}
+		end = cur;
+		cur = buf;
+		return buf != end;
+	}
+	bool hasNext() {
+		while(true) {
+			if(cur == end && !readbuf()) return false;
+			if(isdigit(*cur) || *cur == '-') break;
+			++cur;
+		}
+		return true;
+	}
+	int r() {
+		while(true) {
+			if(cur == end) readbuf();
+			if(isdigit(*cur) || *cur == '-') break;
+			++cur;
+		}
+		bool sign = true;
+		if(*cur == '-') {
+			sign = false;
+			++cur;
+		}
+		int ret = 0;
+		while(true) {
+			if(cur == end && !readbuf()) break;
+			if(!isdigit(*cur)) break;
+			ret = ret * 10 + (*cur - '0');
+			++cur;
+		}
+		return sign ? ret : -ret;
+	}
+} sc;
+```
 
-cin getline
+## Input Format
 
-## Ordered Statistic Tree
+```cpp
+while(scanf("%d", &n) > 0) { // until input ends
+    scanf("%d: (%d)", &x, &y); // formatted input
+    for(int i = 0; i < x; ++i) scanf("%d", &z);
+}
+getline(cin, line);
+```
+
+## String Parsing
+
+```cpp
+vector<string> split(string& target, string regex) { // using regex
+	vector<string> ret;
+	std::regex rgx(regex);
+	std::sregex_token_iterator iter(target.begin(),
+		target.end(),
+		rgx,
+		-1);
+	std::sregex_token_iterator end;
+	for( ; iter != end; ++iter) ret.pb(*iter);
+	return ret;
+}
+vector<string> space_split(string& s) { // split by whitespace 
+	istringstream iss(s);
+	vector<string> ret(istream_iterator<string>{iss}, istream_iterator<string>());
+	return ret;
+}
+std::to_string(42);
+std::atoi("42")
+```
+
+## Ordered Statistic Tree in g++
+
+ ```cpp
+s.find_by_order(x); // 0-indexed
+s.order_of_key(x) // 0-indexed, find first element x <= ar[idx]
+ ```
 
 ## Prime Numbers
 
-## Random & Hashing
+165349, 232153, 1012924417
+
+```cpp
+< 10^k    prime   # of prime          < 10^k            prime
+	-------------------------------------------------------------
+	1             7            4          10           9999999967
+	2            97           25          11          99999999977
+	3           997          168          12         999999999989
+	4          9973         1229          13        9999999999971
+	5         99991         9592          14       99999999999973
+	6        999983        78498          15      999999999999989
+	7       9999991       664579          16     9999999999999937
+	8      99999989      5761455          17    99999999999999997
+	9     999999937     50847534          18   999999999999999989
+```
+
+## Random
+
+```cpp
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+mt19937 rng(0x14004); // 0x94949
+int randint(int s, int e) { return uniform_int_distribution<int>(s, e)(rng); }
+```
+
+## Hashing
+
+```cpp
+struct chash {
+	const int RANDOM = (long long)(make_unique<char>().get()) ^ chrono::high_resolution_clock::now().time_since_epoch().count();
+	static unsigned long long hash_f(unsigned long long x) {
+		x += 0x9e3779b97f4a7c15;
+		x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+		x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+		return x ^ (x >> 31);
+	}
+	static unsigned hash_combine(unsigned a, unsigned b) { return a * 31 + b; }
+	int operator()(int x) const { return hash_f(x)^RANDOM; }
+};
+
+gp_hash_table<key, int, chash> mp;
+int main() {
+	mp[1] = 1;
+}
+```
 

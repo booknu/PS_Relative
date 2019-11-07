@@ -2,16 +2,13 @@
 #include <cstdio>
 #include <cctype>
 class FastIO {
-#define USE_FAST_IO
 	int fd, bufsz;
 	char *buf, *cur, *end;
 public:
 	FastIO(int _fd = 0, int _bufsz = 1 << 20) : fd(_fd), bufsz(_bufsz) {
 		buf = cur = end = new char[bufsz];
 	}
-	~FastIO() {
-		delete[] buf;
-	}
+	~FastIO() { delete[] buf; }
 	bool readbuf() {
 		cur = buf;
 		end = buf + bufsz;

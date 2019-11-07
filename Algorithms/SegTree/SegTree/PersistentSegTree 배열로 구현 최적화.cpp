@@ -1,13 +1,11 @@
 struct pst {
 	i64 x[MAXN*LOGN];
 	int l[MAXN*LOGN], r[MAXN*LOGN], tcnt;
-	// 0번 트리 생성
-	int base(int ns = 0, int ne = MAXN-1) {
+	int base(int ns = 0, int ne = MAXN-1) { // make 0th tree
 		int u = tcnt++;
 		l[u] = u, r[u] = u;
 	}
-	// bef
-	int make(int idx, int c, int u, int ns = 0, int ne = MAXN-1) {
+	int make(int idx, int c, int u, int ns = 0, int ne = MAXN-1) { // update from u-rooted
 		if(idx < ns || ne < idx) return u;
 		int v = tcnt++;
 		if(ns == ne) x[v] = (x[u] + c) % MOD;
@@ -19,8 +17,7 @@ struct pst {
 		}
 		return v;
 	}
-
-	i64 query(int s, int e, int u, int ns = 0, int ne = MAXN-1) {
+	i64 query(int s, int e, int u, int ns = 0, int ne = MAXN-1) { // query from u-rooted
 		if(s <= ns && ne <= e) return x[u];
 		if(ne < s || e < ns) return 0;
 		int m = (ns+ne)/2;

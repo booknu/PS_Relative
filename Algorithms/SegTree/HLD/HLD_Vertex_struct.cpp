@@ -21,8 +21,7 @@ struct hld_vtx {
 			}
 			return ret;
 		}
-	};
-	
+	};	
 	int n, rt;
 	vi ssz, dep, hidx;
 	vvi g, par, hvy;
@@ -33,7 +32,6 @@ struct hld_vtx {
 		decomposite(rt);
 		init_segs();
 	}
-
 	void dfs_init(int u) { // initialize dfs info
 		ssz[u] = 1;
 		FOR(j, 1, LOGN) par[u][j] = par[par[u][j-1]][j-1];
@@ -45,7 +43,6 @@ struct hld_vtx {
 			ssz[u] += ssz[v];
 		}
 	}
-
 	int lca(int u, int v) { // consider par[root] = root
 		if(dep[u] < dep[v]) swap(u, v);
 		int dif = dep[u] - dep[v];
@@ -56,7 +53,6 @@ struct hld_vtx {
 		}
 		return u;
 	}
-
 	void decomposite(int rt) { // decomposite tree
 		queue<int> q;
 		q.push(rt);
@@ -74,25 +70,20 @@ struct hld_vtx {
 			}
 		}
 	}
-
 	void init_segs() { // initialize segtrees
 		segs.assign(hvy.size(), segtree());
 		FOR(i, 0, hvy.size()) segs[i].init(hvy[i].size()); // m nodes
 	}
-
 	int vidx(int u) { // get v's index in h-path
 		return dep[u] - dep[hvy[hidx[u]][0]];
 	}
-
 	void update(int u, int x) { // update v's cost
 		if(x == 0) segs[hidx[u]].update(vidx(u), INF);
 		else segs[hidx[u]].update(vidx(u), vidx(u));
-	}
-	
+	}	
 	int query(int v) { // root->v query
 		return query_to(0, v);
 	}	
-
 	int query_to(int u, int v) { // return u->v path's query
 		if(hidx[u] == hidx[v]) {
 			int res = segs[hidx[u]].query(vidx(u), vidx(v)+1);

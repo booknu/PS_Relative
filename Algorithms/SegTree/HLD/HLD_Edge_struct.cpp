@@ -23,7 +23,6 @@ struct hld_edge {
 			return ret;
 		}
 	};
-
 	int n, rt;
 	vi ssz, dep, hidx;
 	vvi g, par, hvy;
@@ -34,7 +33,6 @@ struct hld_edge {
 		decomposite(rt);
 		init_segs();
 	}
-
 	void dfs_init(int u) { // initialize dfs info
 		ssz[u] = 1;
 		FOR(j, 1, LOGN) par[u][j] = par[par[u][j-1]][j-1];
@@ -46,7 +44,6 @@ struct hld_edge {
 			ssz[u] += ssz[v];
 		}
 	}
-
 	int lca(int u, int v) { // consider par[root] = root
 		if(dep[u] < dep[v]) swap(u, v);
 		int dif = dep[u] - dep[v];
@@ -57,7 +54,6 @@ struct hld_edge {
 		}
 		return u;
 	}
-
 	void decomposite(int rt) { // decomposite tree
 		hidx[rt] = -1;
 		queue<int> q;
@@ -79,29 +75,24 @@ struct hld_edge {
 			}
 		}
 	}
-
 	void init_segs() { // initialize segtrees
 		segs.assign(hvy.size(), segtree());
 		FOR(i, 0, hvy.size()) segs[i].init(hvy[i].size()-1); // m vertices: m-1 edges
 	}
-
 	int eidx(int v) { // get u->v edge index in h-path
 		return dep[par[v][0]] - dep[hvy[hidx[v]][0]];
 	}
-
 	void update(int u, int v, int x) { // u->v edge update
 		if(par[u][0] == v) swap(u, v);
 		assert(par[v][0] == u);
 		segs[hidx[v]].update(eidx(v), x);
 	}
-
 	int query_to(int u, int v) { // return u->v path's query
 		if(u == v) return 0;
 		// modify range if segtree use closed interval [s, e]
 		if(hidx[u] == hidx[v]) return segs[hidx[u]].query(eidx(u)+1, eidx(v)+1); // e(u)+1 because target is edge
 		return max(query_to(u, hvy[hidx[v]][0]), segs[hidx[v]].query(0, eidx(v)+1)); // query tail path + recur
 	}
-
 	int query(int u, int v) {
 		int t = lca(u, v);
 		return max(query_to(t, u), query_to(t, v));

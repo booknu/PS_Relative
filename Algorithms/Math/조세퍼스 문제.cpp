@@ -113,6 +113,18 @@ void debug_out(Head H, Tail... T) {
 
 // ....................................................... //
 
+// O(KlogN) algorithm 
+long long joseph (long long n,long long k) {
+	if (n==1LL) return 0LL;
+	if (k==1LL) return n-1LL;
+	if (k>n) return (joseph(n-1LL,k)+k)%n;
+	long long cnt=n/k;
+	long long res=joseph(n-cnt,k);
+	res-=n%k;
+	if (res<0LL) res+=n;
+	else res+=res/(k-1LL);
+	return res;
+}
 
 void input() {
 

@@ -65,63 +65,56 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int ST_MAX = 1<<21, lf = ST_MAX/2; 
-struct segtree{
-    i64 t[ST_MAX], d[ST_MAX];
-    segtree(){ memset(t, 0, sizeof(t)), memset(d, 0, sizeof(d)); }
-    void build(){ RFOR(i, lf-1, 1) t[i] = t[i*2]+ t[i*2+1]; } // !! BUILD !!
-    void propagate(int u, int ns, int ne){
-        if(!d[u]) return;
-		if(u < lf){ // propagate to childs
-			d[u*2] += d[u];
-			d[u*2+1] += d[u];
+const int MAXN = 1e5+10;
+struct segtree {
+	int n = MAXN, t[MAXN*2];
+	segtree() { fill(t, t + MAXN*2, MAXN); }
+	void update(int u, int x) {
+		for(t[u += n] = x; u > 1; u /= 2) {
+			t[u/2] = min(t[u], t[u^1]);
 		}
-		t[u] += d[u] * (ne-ns); // update node
-		d[u] = 0;
-    }
-    void add(int s, int e, int x){ add(s, e, x, 1, 0, lf); } // [s, e)
-    void add(int s, int e, int x, int u, int ns, int ne){
-        propagate(u, ns, ne);
-        if(e <= ns || ne <= s) return;
-        if(s <= ns && ne <= e){
-            d[u] += x;
-            propagate(u, ns, ne);
-            return;
-        }
-        int mid = (ns+ne)/2;
-        add(s, e, x, u*2, ns, mid), add(s, e, x, u*2+1, mid, ne);
-        t[u] = t[u*2] + t[u*2+1];
-    }
-    i64 sum(int s, int e){ return sum(s, e, 1, 0, lf); } // [s, e)
-    i64 sum(int s, int e, int u, int ns, int ne){
-        propagate(u, ns, ne);
-        if(e <= ns || ne <= s) return 0;
-        if(s <= ns && ne <= e) return t[u];
-        int mid = (ns+ne)/2;
-        return sum(s, e, u*2, ns, mid) + sum(s, e, u*2+1, mid, ne);
-    }
-};
+	}
+	int query(int s, int e) {
+		int ret = MAXN;
+		for(s += n, e += n; s < e; s>>=1, e>>=1) {
+			if(s&1) ret = min(ret, t[s++]);
+			if(e&1) ret = min(ret, t[--e]);
+		}
+		return ret;
+	}
+} seg;
 
-int n, m, k;
-segtree st;
+int n, ar[MAXN], br[MAXN], sidx[MAXN], dp[MAXN];
+vii segs;
 void input() {
-	cin >> n >> m >> k;
-	m += k;
-	FOR(i, 0, n) cin >> st.t[lf+i];
+	cin >> n >> n;
+	FOR(i, 0, n) cin >> ar[i];
+	FOR(i, 0, n) cin >> br[i];
 }
 
 int solve() {
-	st.build();
-	while(m--) {
-		int t; cin >> t;
-		if(t == 1) {
-			int s, e, x; cin >> s >> e >> x; --s;
-			st.add(s, e, x);
-		} else {
-			int s, e; cin >> s >> e; --s;
-			cout << st.sum(s, e) << ENDL;
+	int p = 0;
+	FOR(i, 0, n+1) {
+		if(i && (i == n || br[i-1] != br[i])) {
+			segs.emb(p, i-1);
+			while(p < i) sidx[p++] = segs.size()-1;
 		}
+	}	
+	FOR(i, 0, segs[0].se+1) {
+		dp[i] = 1;
+		seg.update(i, 1);
 	}
+	FOR(i, segs[0].se+1, n) {
+		int dx = ar[i] - ar[segs[sidx[i]].fi], dy = ar[i] - ar[segs[sidx[i]-1].se];
+		int s = max(segs[sidx[i]-1].fi, (int)(lower_bound(ar, ar + n, ar[segs[sidx[i]-1].se] - dy) - ar));
+		int e = min(segs[sidx[i]-1].se, (int)(lower_bound(ar, ar + n, ar[segs[sidx[i]].fi] - dx) - ar));
+		if(ar[e] > ar[segs[sidx[i]].fi] - dx) --e;
+		dp[i] = min((i == segs[sidx[i]].fi ? dp[i-1] : dp[segs[sidx[i]].fi]), seg.query(s, e+1)) + 1;
+		seg.update(i, dp[i]);
+	}
+	int ans = MAXN;
+	FOR(i, segs.back().fi, n) ans = min(ans, dp[i]);
+	cout << ans << ENDL;
 	return 0;
 }
 

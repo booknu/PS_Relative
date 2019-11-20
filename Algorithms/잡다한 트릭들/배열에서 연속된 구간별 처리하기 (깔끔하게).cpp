@@ -21,3 +21,15 @@ int main(void) {
 		}
 	}
 }
+
+// online으로 깔끔하게 처리하는 법
+int main(void) {
+	int p = 0, pp = 0; // p: 현재 구간의 시작점, p2: 이전 구간의 시작점
+	FOR(i, 0, n) {
+		if(ar[p] != ar[i]) { // change seg start points
+			pp = p;
+			p = i;
+		}
+		// .... DO SOMETHING: [pp, p), [p, i) --> prev/cur segs .... //
+	}
+}

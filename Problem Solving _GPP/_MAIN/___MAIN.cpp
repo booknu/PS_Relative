@@ -65,56 +65,57 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 1e5+10;
-struct segtree {
-	int n = MAXN, t[MAXN*2];
-	segtree() { fill(t, t + MAXN*2, MAXN); }
-	void update(int u, int x) {
-		for(t[u += n] = x; u > 1; u /= 2) {
-			t[u/2] = min(t[u], t[u^1]);
-		}
-	}
-	int query(int s, int e) {
-		int ret = MAXN;
-		for(s += n, e += n; s < e; s>>=1, e>>=1) {
-			if(s&1) ret = min(ret, t[s++]);
-			if(e&1) ret = min(ret, t[--e]);
-		}
-		return ret;
-	}
-} seg;
-
-int n, ar[MAXN], br[MAXN], sidx[MAXN], dp[MAXN];
-vii segs;
+// https://www.acmicpc.net/problem/17019
+const int MAXN = 1e5+10, LOGN = 18;
+int n, m, dep[MAXN], cnt[MAXN], par[MAXN][LOGN]; // cnt only counts rev/crossing edges
+i64 ans;
+vi g[MAXN];
 void input() {
-	cin >> n >> n;
-	FOR(i, 0, n) cin >> ar[i];
-	FOR(i, 0, n) cin >> br[i];
+	cin >> n >> m;
+	FOR(i, 0, n) {
+		int u, v; cin >> u >> v; --u, --v;
+		g[u].pb(v);
+		g[v].pb(u);
+	}
+}
+
+void dfs(int u) { // par, dep init
+	FOR(j, 1, LOGN) par[u][j] = par[par[u][j-1]][j-1];
+	for(int v : g[u]) {
+		if(v == par[u][0]) continue;
+		par[v][0] = u;
+		dep[v] = dep[u] + 1;
+		dfs(v);
+	}
+}
+
+int lca(int u, int v) {
+	if(dep[u] < dep[v]) swap(u, v);
+	int dif = dep[u] - dep[v];
+	FOR(j, 0, LOGN) if(dif&(1<<j)) u = par[u][j];
+	if(u != v) {
+		RFOR(j, LOGN-1, 0) if(par[u][j] != par[v][j]) u = par[u][j], v = par[v][j];
+		u = par[u][0];
+	}
+	return u;
+}
+
+void f(int u) {
+	for(int v : g[u]) {
+		if(v != par[u][0] && par[v][0] != u) {
+			
+		}
+	}
 }
 
 int solve() {
-	int p = 0;
-	FOR(i, 0, n+1) {
-		if(i && (i == n || br[i-1] != br[i])) {
-			segs.emb(p, i-1);
-			while(p < i) sidx[p++] = segs.size()-1;
-		}
-	}	
-	FOR(i, 0, segs[0].se+1) {
-		dp[i] = 1;
-		seg.update(i, 1);
+	dfs(0);
+	FOR(i, n, m) {
+		int u, v; cin >> u >> v; --u, --v;
+		g[u].pb(v);
+		g[v].pb(u);
 	}
-	FOR(i, segs[0].se+1, n) {
-		int dx = ar[i] - ar[segs[sidx[i]].fi], dy = ar[i] - ar[segs[sidx[i]-1].se];
-		int s = max(segs[sidx[i]-1].fi, (int)(lower_bound(ar, ar + n, ar[segs[sidx[i]-1].se] - dy) - ar));
-		int e = min(segs[sidx[i]-1].se, (int)(lower_bound(ar, ar + n, ar[segs[sidx[i]].fi] - dx) - ar));
-		if(ar[e] > ar[segs[sidx[i]].fi] - dx) --e;
-		dp[i] = min((i == segs[sidx[i]].fi ? dp[i-1] : dp[segs[sidx[i]].fi]), seg.query(s, e+1)) + 1;
-		seg.update(i, dp[i]);
-	}
-	int ans = MAXN;
-	FOR(i, segs.back().fi, n) ans = min(ans, dp[i]);
-	cout << ans << ENDL;
+	
 	return 0;
 }
 

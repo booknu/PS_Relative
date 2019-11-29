@@ -41,7 +41,7 @@ inline i64 GCD(i64 a, i64 b) { i64 n; if(a < b) swap(a, b); while(b != 0) { n = 
 inline i64 LCM(i64 a, i64 b) { if(a == 0 || b == 0) return GCD(a, b); return a / GCD(a, b) * b; }
 inline i64 CEIL(i64 n, i64 d) { return n / d + (i64)(n % d != 0); } // 음수일 때 이상하게 작동할 수 있음.
 inline i64 ROUND(i64 n, i64 d) { return n / d + (i64)((n % d) * 2 >= d); }
-const i64 MOD = 1e9+7;
+const i64 MOD = 9901;
 inline i64 POW(i64 a, i64 n) {
 	assert(0 <= n);
 	i64 ret;
@@ -65,29 +65,26 @@ void debug_out() { cerr << endl; }
 template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { cerr << " " << H, debug_out(T...); }
 // ....................................................... //
 
-const int MAXN = 5e4+10;
-i64 n, ar[MAXN][5];
-map<vi, i64> mp;
+const int MAXN = 14;
+int n, m, dp[MAXN][1<<MAXN][MAXN+1];
 void input() {
-	cin >> n;
-	FOR(i, 0, n) FOR(j, 0, 5) cin >> ar[i][j];
+	cin >> n >> m;
+}
+
+int f(int idx, int rem, int pos) {
+	if(idx == m) return rem == (1<<n)-1;
+	int& ret = dp[idx][rem][pos];
+	if(ret != -1) return ret;
+	if(pos == n) return ret = f(idx + 1, ((1<<n)-1)&(~rem), 0); // 전이: 1칸짜리는 무조건 채워서 전이하자
+	ret = 0;
+	if(pos+1 < n && ((rem&(1<<pos) && (rem&(1<<pos+1))))) ret += f(idx, rem&(~(3<<pos)), pos+2), rem %= MOD; // 현재 2칸 있으면 채워보기
+	ret += f(idx, rem, pos+1), ret %= MOD; // 그냥 가보기
+	return ret;
 }
 
 int solve() {
-	FOR(i, 0, n) {
-		sort(ar[i], ar[i] + 5);
-		FOR(b, 1, (1<<5)) {
-			vi cur;
-			FOR(j, 0, 5) if(b&(1<<j)) cur.pb(ar[i][j]);
-			++mp[cur]; 
-		}
-	}
-	i64 ans = n*(n-1);
-	for(auto& [lis, cnt] : mp) {
-		if(lis.size()%2) ans -= cnt*(cnt-1);
-		else ans += cnt*(cnt-1);
-	}
-	cout << ans << ENDL;
+	memset(dp, -1, sizeof(dp));
+	cout << f(0, (1<<n)-1, 0) << ENDL;
 	return 0;
 }
 

@@ -1,3 +1,7 @@
+#pragma GCC optimize ("O3")
+#pragma GCC optimize ("Ofast")
+#pragma GCC optimize ("unroll-loops")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,avx,avx2")
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -66,12 +70,25 @@ template <typename Head, typename... Tail> void debug_out(Head H, Tail... T) { c
 // ....................................................... //
 
 
+class Solution {
+public:
+	int func() {
+		// DO INITIAL MAPPING
+		
+		// solve
+	}
+};
+
+#ifdef LOCAL_BOOKNU
+
+
 void input() {
 	
 }
 
+Solution slt;
 int solve() {
-	
+	cout << slt.func() << ENDL;
 	return 0;
 }
 
@@ -81,12 +98,10 @@ void execute() {
 }
 
 int main(void) {
-#ifdef LOCAL_BOOKNU
 	freopen("__IO/input.txt", "r", stdin);
 	// freopen("__IO/out.txt", "w", stdout);
-#endif
 	cin.tie(0), ios_base::sync_with_stdio(false);
 	execute();
-	return 0;
 }
+#endif
 // ......................................... //

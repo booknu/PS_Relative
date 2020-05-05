@@ -77,6 +77,9 @@ int solve() {
 
 // ................. main .................. //
 void execute() {
+	int TTTT; cin >> TTTT;
+	FOR(tttt, 1, TTTT+1) 
+	cout << "Case #" << tttt << ": ",
 	input(), solve();
 }
 
